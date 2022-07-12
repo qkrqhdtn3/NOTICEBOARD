@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/world?serverTimeZone=UTC&CharacterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/qqta?serverTimeZone=UTC&CharacterEncoding=UTF-8
     username: qkrqhdtn3
     password: Aa123123
     hikari:
@@ -16,7 +16,7 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
-      location: C:\\Users\\qkrqh\\Desktop\\restapi
+      location: C:\\Users\\qkrqh\\Desktop\\notice_board
   mvc:
     view:
       prefix: /WEB-INF/views/
