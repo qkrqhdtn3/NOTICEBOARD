@@ -6,4 +6,8 @@ import com.example.board.domain.BoardDTO;
 
 public interface BoardDAO {
 	public List<BoardDTO> list() throws Exception;
+
+	Integer getMaxSeq();
+
+	int regi(BoardDTO dto);
 }

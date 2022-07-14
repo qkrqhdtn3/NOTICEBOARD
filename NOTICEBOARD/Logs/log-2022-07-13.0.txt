@@ -1,0 +1,68 @@
+[INFO ] 09:58:17.522 c.e.board.NoticeboardApplication - Starting NoticeboardApplication using Java 18.0.1 on LAPTOP-4P86VC81 with PID 6500 (C:\Users\qkrqh\eclipse-workspace\NOTICEBOARD\bin\main started by qkrqh in C:\Users\qkrqh\eclipse-workspace\NOTICEBOARD)
+[INFO ] 09:58:17.524 c.e.board.NoticeboardApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 09:58:17.676 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 09:58:17.676 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 09:58:18.421 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[INFO ] 09:58:18.429 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 09:58:18.430 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] 09:58:18.430 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+[INFO ] 09:58:18.559 org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[INFO ] 09:58:18.564 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 09:58:18.564 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 887 ms
+[INFO ] 09:58:18.771 o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[INFO ] 09:58:18.882 o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 09:58:18.893 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 09:58:18.913 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[INFO ] 09:58:18.926 c.e.board.NoticeboardApplication - Started NoticeboardApplication in 1.751 seconds (JVM running for 2.258)
+[INFO ] 09:58:20.405 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 09:58:20.406 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 09:58:20.406 o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+[INFO ] 09:58:20.465 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 09:58:20.776 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 10:41:43.517 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 10:41:43.521 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 10:41:43.587 c.e.board.NoticeboardApplication - Starting NoticeboardApplication using Java 18.0.1 on LAPTOP-4P86VC81 with PID 6500 (C:\Users\qkrqh\eclipse-workspace\NOTICEBOARD\bin\main started by qkrqh in C:\Users\qkrqh\eclipse-workspace\NOTICEBOARD)
+[INFO ] 10:41:43.587 c.e.board.NoticeboardApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 10:41:43.758 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[INFO ] 10:41:43.758 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 10:41:43.758 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] 10:41:43.759 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+[INFO ] 10:41:43.808 org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[INFO ] 10:41:43.809 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 10:41:43.809 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 217 ms
+[INFO ] 10:41:43.876 o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[INFO ] 10:41:43.905 o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 10:41:43.908 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 10:41:43.911 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[INFO ] 10:41:43.915 c.e.board.NoticeboardApplication - Started NoticeboardApplication in 0.36 seconds (JVM running for 2607.247)
+[INFO ] 10:41:43.916 o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+[INFO ] 10:41:47.862 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 10:41:47.863 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 10:41:47.863 o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+[INFO ] 10:41:47.875 com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+[INFO ] 10:41:47.887 com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+[INFO ] 10:45:31.074 com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+[INFO ] 10:45:31.079 com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+[INFO ] 10:45:31.132 c.e.board.NoticeboardApplication - Starting NoticeboardApplication using Java 18.0.1 on LAPTOP-4P86VC81 with PID 6500 (C:\Users\qkrqh\eclipse-workspace\NOTICEBOARD\bin\main started by qkrqh in C:\Users\qkrqh\eclipse-workspace\NOTICEBOARD)
+[INFO ] 10:45:31.132 c.e.board.NoticeboardApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 10:45:31.249 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[INFO ] 10:45:31.249 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 10:45:31.249 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] 10:45:31.249 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+[INFO ] 10:45:31.294 org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[INFO ] 10:45:31.295 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 10:45:31.295 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 162 ms
+[INFO ] 10:45:31.341 o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+[INFO ] 10:45:31.366 o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 10:45:31.370 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 10:45:31.372 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[INFO ] 10:45:31.376 c.e.board.NoticeboardApplication - Started NoticeboardApplication in 0.261 seconds (JVM running for 2834.706)
+[INFO ] 10:45:31.377 o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+[INFO ] 10:45:32.563 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 10:45:32.563 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 10:45:32.564 o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[INFO ] 10:45:32.573 com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+[INFO ] 10:45:32.587 com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+[INFO ] 10:52:38.463 o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[INFO ] 10:52:38.482 com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+[INFO ] 10:52:38.485 com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
