@@ -3,7 +3,9 @@ package com.example.board.dao;
 import java.util.List;
 
 import org.springframework.jdbc.core.namedparam.EmptySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import com.example.board.domain.BoardDTO;
@@ -30,4 +32,20 @@ public class BoardDAOImpl implements BoardDAO {
 		return namedParameterJdbcTemplate.query(BoardSql.SELECT, EmptySqlParameterSource.INSTANCE, this.boardRowMapper);
 	}
 	
+	@Override
+	public Integer getMaxSeq() {
+		return namedParameterJdbcTemplate.queryForObject(BoardSql.MAX_SEQ, (SqlParameterSource)null, Integer.class);
+	}
+	
+	@Override
+	public int regi(BoardDTO dto) {
+		log.debug("query : {}", BoardSql.INSERT);
+		SqlParameterSource sqlParameterSource = new MapSqlParameterSource("seq", dto.getSeq())
+				.addValue("subject", dto.getSubject())
+				.addValue("content", dto.getContent())
+				.addValue("name", dto.getName())
+				.addValue("reg_date", dto.getReg_date())
+				.addValue("readCount", dto.getReadCount());
+		return namedParameterJdbcTemplate.update(BoardSql.INSERT, sqlParameterSource);
+	}
 }

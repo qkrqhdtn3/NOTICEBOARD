@@ -5,6 +5,14 @@ public class BoardSql {
 //			SELECT seq, subject, content, name, reg_date, readCount FROM board WHERE 1=1
 //		""";
 	public static final String SELECT = """
-			SELECT * FROM board WHERE 1=1
-		""";
+				SELECT * FROM BOARD WHERE 1=1
+			""";
+
+	public static final String INSERT = """
+			INSERT INTO BOARD(seq, subject, content, name, reg_date, readcount) VALUES(:seq, :subject, :content, :name, :reg_date, 0)
+			""";
+
+	public static final String MAX_SEQ = """
+				SELECT max(seq) FROM BOARD
+			""";
 }
