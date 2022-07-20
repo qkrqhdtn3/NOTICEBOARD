@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 import com.example.board.dao.BoardDAO;
 import com.example.board.domain.BoardDTO;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class BoardServiceImpl implements BoardService{
 	
@@ -21,6 +24,7 @@ public class BoardServiceImpl implements BoardService{
 	
 	@Override
 	public int regi(BoardDTO dto) throws Exception{
+//		log.warn("dao.getMaxSeq() = {}", dao.getMaxSeq());
 		if(dao.getMaxSeq()==null) {
 			dto.setSeq(1);
 		} else {
@@ -28,5 +32,11 @@ public class BoardServiceImpl implements BoardService{
 		}
 		
 		return dao.regi(dto);
+	}
+	
+	@Override
+	public BoardDTO view(int seq) {
+		dao.updateReadCount(seq);
+		return dao.view(seq);
 	}
 }

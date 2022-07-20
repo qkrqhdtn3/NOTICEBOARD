@@ -41,6 +41,10 @@ dependencies {
 	// slf4j, logback
 	implementation('org.slf4j:jcl-over-slf4j')
 	implementation('ch.qos.logback:logback-classic')
+	
+	// jquery
+	implementation group: 'org.webjars', name: 'jquery', version: '3.6.0'
+	implementation group: 'org.webjars', name: 'bootstrap', version: '4.6.0'
 }
 
 tasks.named('test') {

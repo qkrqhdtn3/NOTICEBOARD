@@ -27,7 +27,7 @@ public class BoardDAOImpl implements BoardDAO {
 	
 	@Override
 	public List<BoardDTO> list() throws Exception {
-		log.debug("query : {}", BoardSql.SELECT);
+//		log.debug("query : {}", BoardSql.SELECT);
 		
 		return namedParameterJdbcTemplate.query(BoardSql.SELECT, EmptySqlParameterSource.INSTANCE, this.boardRowMapper);
 	}
@@ -39,7 +39,7 @@ public class BoardDAOImpl implements BoardDAO {
 	
 	@Override
 	public int regi(BoardDTO dto) {
-		log.debug("query : {}", BoardSql.INSERT);
+		log.warn("query : {}", BoardSql.INSERT);
 		SqlParameterSource sqlParameterSource = new MapSqlParameterSource("seq", dto.getSeq())
 				.addValue("subject", dto.getSubject())
 				.addValue("content", dto.getContent())
@@ -47,5 +47,19 @@ public class BoardDAOImpl implements BoardDAO {
 				.addValue("reg_date", dto.getReg_date())
 				.addValue("readCount", dto.getReadCount());
 		return namedParameterJdbcTemplate.update(BoardSql.INSERT, sqlParameterSource);
+	}
+
+	@Override
+	public BoardDTO view(int seq) {
+		String qry = BoardSql.SELECT + BoardSql.SEQ_CONDITION;
+		SqlParameterSource sqlParameterSource = new MapSqlParameterSource("seq", seq);
+		return namedParameterJdbcTemplate.queryForObject(qry, sqlParameterSource, BoardDTO.class);
+	}
+
+	@Override
+	public void updateReadCount(int seq) {
+		String qry = BoardSql.UPDATE_READCOUNT + BoardSql.SEQ_CONDITION;
+		SqlParameterSource sqlParameterSource = new MapSqlParameterSource("seq", seq);
+		namedParameterJdbcTemplate.update(qry, sqlParameterSource);
 	}
 }
