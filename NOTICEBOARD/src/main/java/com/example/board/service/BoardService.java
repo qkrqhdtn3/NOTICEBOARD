@@ -8,4 +8,6 @@ public interface BoardService {
 	public List<BoardDTO> list() throws Exception;
 
 	int regi(BoardDTO dto) throws Exception;
+	
+	BoardDTO view(int seq);
 }
