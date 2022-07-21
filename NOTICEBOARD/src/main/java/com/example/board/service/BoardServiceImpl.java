@@ -36,7 +36,20 @@ public class BoardServiceImpl implements BoardService{
 	
 	@Override
 	public BoardDTO view(int seq) {
+//		log.warn("service.view()");
 		dao.updateReadCount(seq);
-		return dao.view(seq);
+		return dao.view(seq).get(0);
+	}
+
+	@Override
+	public int update(BoardDTO dto) {
+//		log.warn("service.update()");
+		return dao.update(dto);
+	}
+
+	@Override
+	public int delete(int seq) {
+//		log.warn("service.delete()");
+		return dao.delete(seq);
 	}
 }

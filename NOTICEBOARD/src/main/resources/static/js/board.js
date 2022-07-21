@@ -1,24 +1,11 @@
 function fn_boardRegi(){
-	/*
-	var subject = $("#subject").val();
-	var name = $("#name").val();
-	var content = $("#content").val();
-	*/
 	var data = $("#frm").serialize();
-	//alert(data);
+	
 	$.ajax({
-		//type : "GET",
 		type : "POST",
 		url : "/board/regi",
 		data : data,
-		//data : {subject : subject, name : name, content : content},
-		//dataType : 'json',
-		//async: false,
-		//data : JSON.stringify(data),
-		//dataType:"text",
-		//contentType : "application/json; charset=UTF-8",
 		success: function(data){
-			//alert('?');
 			if(data=="Y"){
 				alert("글 등록이 완료되었습니다.");
 				location.href="/board/list";
@@ -26,15 +13,7 @@ function fn_boardRegi(){
 				alert("글 등록 실패");
 			}	
 			
-		},/*
-		error: function(data){
-			alert("실패"+data);
-			alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-		}*/
-		/*
-		error: function(jqXHR, textStatus, errorThrown){
-			alert("ERROR : " + textStatus + " : " + errorThrown);
-		}*/
+		},
 		error: function(xhr, ajaxOptions, thrownError){
 			alert(xhr.status + " , " + xhr.responseText);
 			alert(thrownError);
@@ -47,14 +26,63 @@ function fn_boardRegi(){
 	}).always(function(){
 		//alert("요청 완료");
 	});
-	//alert('hi4');
+};
+
+function fn_boardUpdate(){
+	var seq = $("#seq").val();
+	var data = $("#frm").serialize();
+	
+	$.ajax({
+		type : "POST",
+		url : "/board/update",
+		data : data,
+		success : function(data){
+			if(data=="Y"){
+				alert("글 수정이 완료되었습니다.");
+				alert(seq);
+				fn_goView(seq);
+			} else{
+				alert("글 수정이 실패되었습니다.");
+			}
+		},
+		error : function(data){
+			alert("실패");
+		}
+	});
+};
+
+function fn_boardDelete(seq){
+	$.ajax({
+		type : "POST",
+		url : "/board/delete",
+		data : {seq : seq},
+		success : function(data){
+			if(data=="Y"){
+				alert("글 삭제가 완료되었습니다.");
+			} else{
+				alert("글 삭제가 실패되었습니다.");
+			}
+		},
+		error : function(data){
+			alert("실패");
+		}
+	})
 };
 
 function fn_goView(seq){
 	$("#seq").val(seq);
 	
-	var f = $("frm");
+	var f = $("#frm");
 	f.attr("action", "/board/view");
+	f.attr("method", "POST");
+	f.submit();
+};
+
+function fn_goUpdateView(seq){
+	$("#seq").val(seq);
+	
+	var f = $("#frm");
+	f.attr("action", "/board/goUpdateView");
 	f.attr("method", "POST");
 	f.submit();
 };
