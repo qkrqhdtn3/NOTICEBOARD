@@ -7,7 +7,11 @@ import com.example.board.domain.BoardDTO;
 public interface BoardService {
 	public List<BoardDTO> list() throws Exception;
 
-	int regi(BoardDTO dto) throws Exception;
+	public int regi(BoardDTO dto) throws Exception;
 	
-	BoardDTO view(int seq);
+	public BoardDTO view(int seq);
+	
+	public int update(BoardDTO dto);
+	
+	public int delete(int seq);
 }

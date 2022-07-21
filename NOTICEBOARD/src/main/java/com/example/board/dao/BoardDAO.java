@@ -11,7 +11,11 @@ public interface BoardDAO {
 
 	int regi(BoardDTO dto);
 	
-	public BoardDTO view(int seq);
+	public List<BoardDTO> view(int seq);
 	
 	public void updateReadCount(int seq);
+	
+	public int update(BoardDTO dto);
+	
+	public int delete(int seq);
 }
