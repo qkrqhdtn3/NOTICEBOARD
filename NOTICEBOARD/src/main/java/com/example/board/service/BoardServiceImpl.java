@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 import com.example.board.dao.BoardDAO;
 import com.example.board.domain.BoardDTO;
 
-import lombok.extern.slf4j.Slf4j;
+//import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
+//@Slf4j
 @Service
 public class BoardServiceImpl implements BoardService{
 	
