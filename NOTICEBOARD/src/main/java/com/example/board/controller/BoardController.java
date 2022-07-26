@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.board.domain.BoardDTO;
 import com.example.board.service.BoardService;
 
-import lombok.extern.slf4j.Slf4j;
+//import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
+//@Slf4j
 @RequestMapping(value="/board/*")
 @Controller
 public class BoardController{
