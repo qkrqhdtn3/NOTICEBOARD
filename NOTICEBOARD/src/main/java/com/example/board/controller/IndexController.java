@@ -15,7 +15,7 @@ public class IndexController{
 	
 	@RequestMapping("/")
 	public ModelAndView indexPage() {
-		ModelAndView model = new ModelAndView("index");
+		ModelAndView model = new ModelAndView("thymeleaf/index");
 		LocalDateTime dt1 = LocalDateTime.now();
 		String dtStr = dt1.format(DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 HH시 mm분 ss초"));
 		model.addObject("serverTime", dtStr);

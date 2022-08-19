@@ -23,7 +23,8 @@ ext.webjarsFontawesomeVersion = "4.7.0"
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+//    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    implementation 'org.springframework.boot:spring-boot-devtools'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     // db
@@ -52,6 +53,9 @@ dependencies {
     //	fontawesome
     implementation "org.webjars.npm:font-awesome:${webjarsFontawesomeVersion}"
 //    implementation "org.webjars.npm:font-awesome:4.7.0"
+
+    //webjars 버전 생략
+    implementation 'org.webjars:webjars-locator-core'
 
 }
 
