@@ -1,3 +1,4 @@
+// alert("hi");
 function fn_login(){
 	//var id=$("#id").val();
 	//var password=$("#password").val();
@@ -18,10 +19,10 @@ function fn_login(){
 			alert("아이디 또는 비밀번호가 일치하지 않습니다. error");
 		}
 	}).done(function(){
-		alert("요청 성공");
+		// alert("요청 성공");
 	}).fail(function(){
-		//alert("요청 실패");
+		alert("요청 실패");
 	}).always(function(){
-		//alert("요청 완료");
+		// alert("요청 완료");
 	});
 };

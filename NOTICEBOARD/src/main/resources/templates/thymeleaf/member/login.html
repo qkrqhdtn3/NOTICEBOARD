@@ -1,13 +1,13 @@
-<html xmlns:th="https://www.thymeleaf.org"
-      th:replace="~{thymeleaf/fragments/layout :: layout (~{::body},'')}">
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>-->
-<!--    <script src="/webjars/bootstrap/4.6.0/js/bootstrap.min.js"></script>-->
-<!--    <script src="/js/member.js"></script>-->
-<!--    <title>Insert title here</title>-->
-<!--</head>-->
+<!--<html xmlns:th="https://www.thymeleaf.org" th:replace="~{thymeleaf/fragments/layout :: layout (~{::body},'')}">-->
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <div th:replace="thymeleaf/fragments/header :: header"></div>
+    <!--    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>-->
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/js/member.js"></script>
+</head>
 <body>
+<div th:replace="thymeleaf/fragments/nav :: nav"></div>
 <form id="frm">
     <div>
         아이디 : <input type="text" id="id" name="id" value="id1">
@@ -15,8 +15,11 @@
     <div>
         비밀번호 : <input type="text" id="password" name="password" value="password">
     </div>
-    <button type="button" onclick="fn_login();">로그인</button>
+    <!--    <button type="button" onclick="fn_login();">로그인</button>-->
+    <button type="button" th:onclick="fn_login()">로그인</button>
     <button type="button" onclick='location.href="/member/join"'>회원가입</button>
 </form>
+<!--<div th:replace="thymeleaf/fragments/footer :: footer(~{::body})"></div>-->
+<div th:replace="thymeleaf/fragments/footer :: footer"></div>
 </body>
 </html>

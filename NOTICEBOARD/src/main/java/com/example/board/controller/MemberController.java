@@ -14,30 +14,31 @@ import com.example.board.service.MemberService;
 
 @Controller
 public class MemberController {
-	
-	@Autowired
-	private MemberService service;
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String login() {
-		return "thymeleaf/member/login";
-	}
+    @Autowired
+    private MemberService service;
 
-	@ResponseBody
-	@RequestMapping(value = "/member/login", method = RequestMethod.POST)
-	public String regi(MemberDTO dto, HttpSession session) {
-		MemberDTO dto2 = service.login(dto);
-		if (dto != null) {
-			session.setAttribute("id", dto2.getId());
-			return "Y";
-		} else {
-			return "N";
-		}
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String login() {
+        return "thymeleaf/member/login";
+//        return "member/login";
+    }
 
-	}
+    @ResponseBody
+    @RequestMapping(value = "/member/login", method = RequestMethod.POST)
+    public String regi(MemberDTO dto, HttpSession session) {
+        MemberDTO dto2 = service.login(dto);
+        if (dto != null) {
+            session.setAttribute("id", dto2.getId());
+            return "Y";
+        } else {
+            return "N";
+        }
 
-	@GetMapping(value="member/join")
-	public String join(){
-		return "member/join";
-	}
+    }
+
+    @GetMapping(value = "member/join")
+    public String join() {
+        return "member/join";
+    }
 }

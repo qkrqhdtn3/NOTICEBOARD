@@ -1,0 +1,38 @@
+<!--<!DOCTYPE html>-->
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <script src="/webjars/jquery/jquery.min.js"></script>
+<!--    <script src="/webjars/bootstrap/4.6.0/js/bootstrap.min.js"></script>-->
+    <script src="/js/board.js"></script>
+</head>
+<body>
+<form id="frm">
+    <input type="hidden" value="" name="seq" id="seq">
+    <table>
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>내용</th>
+            <th>작성자</th>
+            <th>날짜</th>
+            <th>조회수</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="board : ${list}">
+            <td th:text="${board.seq}"></td>
+<!--            <td><a href="#" th:text="${board.subject}" th:onclick="fn_goView('${board.seq}')"></a></td>-->
+            <td><a href="#" th:text="${board.subject}" th:onclick="fn_goView(${board.seq})"></a></td>
+            <td th:text="${board.content}"></td>
+            <td th:text="${board.name}"></td>
+            <td th:text="${board.reg_date}"></td>
+            <td th:text="${board.readCount}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <button type="button" onclick="location.href='/board/regiView'">글쓰기</button>
+</form>
+</body>
+</html>

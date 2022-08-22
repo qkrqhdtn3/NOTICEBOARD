@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
-<script src="/webjars/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+<%--<script src="/webjars/bootstrap/4.6.0/js/bootstrap.min.js"></script>--%>
 <script src="/js/member.js"></script>
 <title>Insert title here</title>
 </head>

@@ -1,3 +1,4 @@
+// alert("hi");
 function fn_boardRegi(){
 	var data = $("#frm").serialize();
 	

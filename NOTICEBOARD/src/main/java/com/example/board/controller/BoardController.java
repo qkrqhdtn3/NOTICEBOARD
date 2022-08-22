@@ -35,7 +35,7 @@ public class BoardController {
         List<BoardDTO> list = service.list();
         model.addAttribute("list", list);
 
-        return "/board/list";
+        return "thymeleaf/board/list";
     }
 
     @RequestMapping(value = "/regiView", method = RequestMethod.GET)
@@ -46,10 +46,10 @@ public class BoardController {
     @ResponseBody
     @RequestMapping(value = "/regi", method = RequestMethod.POST)
     public String regi(BoardDTO dto) throws Exception {
-        Date date = new Date(System.currentTimeMillis());
-        SimpleDateFormat format = new SimpleDateFormat("yyyyMMdHHmmss");
-
-        dto.setReg_date(format.format(date));
+//        Date date = new Date(System.currentTimeMillis());
+//        SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
+//
+//        dto.setReg_date(format.format(date));
         if (service.regi(dto) == 1) {
             return "Y";
         } else {

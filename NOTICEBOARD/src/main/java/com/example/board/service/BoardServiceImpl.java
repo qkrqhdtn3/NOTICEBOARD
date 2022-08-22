@@ -1,5 +1,7 @@
 package com.example.board.service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +21,25 @@ public class BoardServiceImpl implements BoardService{
 	
 	@Override
 	public List<BoardDTO> list() throws Exception {
-		return dao.list();
+		List<BoardDTO> boardDTOList = dao.list();
+		SimpleDateFormat prevDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+		SimpleDateFormat newDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		for(BoardDTO boardDTO : boardDTOList){
+			String prevDate = boardDTO.getReg_date();
+			if(prevDate==null) continue;
+			boardDTO.setReg_date(newDateFormat.format(prevDateFormat.parse(prevDate)));
+		}
+		return boardDTOList;
 	}
 	
 	@Override
 	public int regi(BoardDTO dto) throws Exception{
 //		log.warn("dao.getMaxSeq() = {}", dao.getMaxSeq());
+
+		Date date = new Date(System.currentTimeMillis());
+		SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
+		dto.setReg_date(format.format(date));
+
 		if(dao.getMaxSeq()==null) {
 			dto.setSeq(1);
 		} else {
