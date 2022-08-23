@@ -39,6 +39,6 @@ public class MemberController {
 
     @GetMapping(value = "member/join")
     public String join() {
-        return "member/join";
+        return "thymeleaf/member/join";
     }
 }

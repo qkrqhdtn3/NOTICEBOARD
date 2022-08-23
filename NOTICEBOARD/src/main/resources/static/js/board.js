@@ -1,4 +1,4 @@
-// alert("hi");
+// alert("board.js");
 function fn_boardRegi(){
 	var data = $("#frm").serialize();
 	
@@ -40,7 +40,7 @@ function fn_boardUpdate(){
 		success : function(data){
 			if(data=="Y"){
 				alert("글 수정이 완료되었습니다.");
-				alert(seq);
+				// alert(seq);
 				fn_goView(seq);
 			} else{
 				alert("글 수정이 실패되었습니다.");
@@ -71,12 +71,29 @@ function fn_boardDelete(seq){
 };
 
 function fn_goView(seq){
+	// alert("goView");
 	$("#seq").val(seq);
-	
+	// alert(seq);
+
 	var f = $("#frm");
 	f.attr("action", "/board/view");
 	f.attr("method", "POST");
 	f.submit();
+	// $.ajax({
+	// 	type : "POST",
+	// 	url : "/board/view",
+	// 	data : {seq : seq},
+	// 	success : function(data){
+	// 		if(data=="Y"){
+	// 			alert("글 조회가 완료되었습니다.");
+	// 		} else{
+	// 			alert("글 조회가 실패되었습니다.");
+	// 		}
+	// 	},
+	// 	error : function(data){
+	// 		alert("실패");
+	// 	}
+	// });
 };
 
 function fn_goUpdateView(seq){

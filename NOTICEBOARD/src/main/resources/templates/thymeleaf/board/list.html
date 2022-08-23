@@ -1,11 +1,13 @@
 <!--<!DOCTYPE html>-->
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
+    <div th:replace="thymeleaf/fragments/header :: header"></div>
     <script src="/webjars/jquery/jquery.min.js"></script>
 <!--    <script src="/webjars/bootstrap/4.6.0/js/bootstrap.min.js"></script>-->
     <script src="/js/board.js"></script>
 </head>
 <body>
+<div th:replace="thymeleaf/fragments/nav :: nav"></div>
 <form id="frm">
     <input type="hidden" value="" name="seq" id="seq">
     <table>
@@ -22,8 +24,8 @@
         <tbody>
         <tr th:each="board : ${list}">
             <td th:text="${board.seq}"></td>
-<!--            <td><a href="#" th:text="${board.subject}" th:onclick="fn_goView('${board.seq}')"></a></td>-->
-            <td><a href="#" th:text="${board.subject}" th:onclick="fn_goView(${board.seq})"></a></td>
+<!--            <td><a href="#" th:text="${board.subject}" th:seq="${board.seq}" th:onclick="fn_goView(this.getAttribute('seq'))"></a></td>-->
+            <td><a href="#" th:text="${board.subject}" th:onclick="'fn_goView('+${board.seq}+')'"></a></td>
             <td th:text="${board.content}"></td>
             <td th:text="${board.name}"></td>
             <td th:text="${board.reg_date}"></td>
@@ -34,5 +36,6 @@
 
     <button type="button" onclick="location.href='/board/regiView'">글쓰기</button>
 </form>
+<div th:replace="thymeleaf/fragments/footer :: footer"></div>
 </body>
 </html>

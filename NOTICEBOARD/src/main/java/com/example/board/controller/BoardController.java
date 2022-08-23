@@ -40,7 +40,7 @@ public class BoardController {
 
     @RequestMapping(value = "/regiView", method = RequestMethod.GET)
     public String regiView() throws Exception {
-        return "/board/regi";
+        return "thymeleaf/board/regi";
     }
 
     @ResponseBody
@@ -61,9 +61,10 @@ public class BoardController {
     public String view(Model model, HttpServletRequest request) throws Exception {
 //		log.warn("controller.view()");
 //		log.warn(request.getParameter("seq"));
+//        BoardDTO dto = service.view(Integer.parseInt((String) request.getParameter("seq")));
         BoardDTO dto = service.view(Integer.parseInt((String) request.getParameter("seq")));
         model.addAttribute("view", dto);
-        return "/board/view";
+        return "thymeleaf/board/view";
     }
 
     @RequestMapping(value = "/goUpdateView", method = RequestMethod.POST)
@@ -74,7 +75,7 @@ public class BoardController {
         BoardDTO dto = service.view(Integer.parseInt((String) request.getParameter("seq")));
 //		log.warn("controller.updateView()2");
         model.addAttribute("view", dto);
-        return "/board/update";
+        return "thymeleaf/board/update";
     }
 
     @ResponseBody
