@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.origin.SystemEnvironmentOrigin;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.env.Environment;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -16,14 +17,13 @@ class NoticeboardApplicationTests {
 	@Test
 	void contextLoads() {
 	}
+
 	@Autowired
 	private JasyptTest jasyptTest;
 
 	@Test
 	void jasypt_test(){
 		assertThat("qkrqhdtn3", is(equalTo(jasyptTest.getPropertiesTestValue())));
-//		System.out.println(System.getProperty("jasypt.encryptor.password"));
-		System.out.println(System.getProperties());
-//		System.out.println("hi");
+		System.out.println(jasyptTest.getPropertiesTestValue());
 	}
 }

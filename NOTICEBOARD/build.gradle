@@ -36,6 +36,7 @@ dependencies {
     // db
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     runtimeOnly 'mysql:mysql-connector-java'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
     // lombok
     compileOnly 'org.projectlombok:lombok'
@@ -65,8 +66,17 @@ dependencies {
     //webjars 버전 생략
     implementation 'org.webjars:webjars-locator-core'
 
+    // junit
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 }
 
-tasks.named('test') {
-    useJUnitPlatform()
-}
+//gradle test -D
+//tasks.named('test') {
+//    useJUnitPlatform()
+//}
+
+//test{
+//    useJUnitPlatform()
+//    systemProperty 'jasypt.encryptor.password'
+//}

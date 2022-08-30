@@ -30,3 +30,12 @@ CREATE TABLE IF NOT EXISTS member(
 INSERT IGNORE INTO member (ID, PASSWORD, NAME) VALUES ('id1', 'password', 'name1');
 INSERT IGNORE INTO member (ID, PASSWORD, NAME) VALUES ('id2', 'passwoRd', 'name2');
 INSERT IGNORE INTO member (ID, PASSWORD, NAME) VALUES ('id3', 'passworD', 'name3');
+
+#emailToken.sql
+CREATE TABLE IF NOT EXISTS emailToken(
+    id varchar(40),
+    expirationDate timestamp,
+    expired tinyint(1),
+    memberId bigint unsigned,
+    PRIMARY KEY(id)
+    );
