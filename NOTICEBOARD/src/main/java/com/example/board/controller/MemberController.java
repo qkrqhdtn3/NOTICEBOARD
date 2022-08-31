@@ -1,23 +1,37 @@
 package com.example.board.controller;
 
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import com.example.board.domain.EmailToken;
+import com.example.board.domain.Member;
+import com.example.board.service.EmailTokenServiceImpl;
+import com.example.board.service.MemberServiceImpl;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
 
 import com.example.board.domain.MemberDTO;
 import com.example.board.service.MemberService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Random;
 
+@RequiredArgsConstructor
 @Controller
 public class MemberController {
-
-    @Autowired
-    private MemberService service;
+    //@Autowired
+//    private MemberService service;
+//@Autowired
+//    private EmailTokenServiceImpl emailTokenService;
+    private final MemberService service;
+    private final EmailTokenServiceImpl emailTokenService;
+    private final MemberServiceImpl memberService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String login() {
@@ -43,16 +57,35 @@ public class MemberController {
         return "thymeleaf/member/join";
     }
 
-    @GetMapping(value = "member/mail")
-    public String mailView() {
-        return "thyemleaf/member/mail.html";
+    @GetMapping(value = "member/joinBeforeVerified")
+    public String joinBeforeVerifiedView() {
+        return "thymeleaf/member/joinBeforeVerified";
     }
+
+    //    @RequestMapping(value = "member/joinBeforeVerified", method = RequestMethod.POST)
+//    public String joinBeforeVerified(HttpServletRequest request) {
+//        emailTokenService.createEmailToken(request.getParameter("id"), request.getParameter("email"));
+//        return "thymeleaf/member/login";
+//    }
+    @RequestMapping(value = "member/joinBeforeVerified", method = RequestMethod.POST)
+    public String joinBeforeVerified(HttpServletRequest request, Member member) {
+        member.setId(request.getParameter("id"));
+        member.setPassword(request.getParameter("password"));
+        member.setName(request.getParameter("name"));
+        memberService.join(member);
+        emailTokenService.createEmailToken(request.getParameter("id"), request.getParameter("email"));
+        return "thymeleaf/member/login";
+    }
+
+//    @GetMapping(value = "member/mail")
+//    public String mailView() {
+//        return "thyemleaf/member/mail.html";
+//    }
 
 //    @RequestMapping(value = "member/mail", method = RequestMethod.POST)
 //    public String mail(MailDTO mailDTO){
 //        mailService.mailSend(mailDTO);
 //    }
-
 
 
 //    @ResponseBody

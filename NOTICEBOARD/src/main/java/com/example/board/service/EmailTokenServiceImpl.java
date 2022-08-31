@@ -18,26 +18,31 @@ public class EmailTokenServiceImpl {
     private final EmailSenderServiceImpl emailSenderService;
     private final EmailTokenRepository emailTokenRepository;
 
-    public String createEmailToken(Long memberId, String receiverEmail){
+    public String createEmailToken(String memberId, String receiverEmail) {
         Assert.notNull(memberId, "memberId는 필수입니다");
         Assert.hasText(receiverEmail, "receiverEmail은 필수입니다.");
 
 //        이메일 토큰 저장
         EmailToken emailToken = EmailToken.createEmailToken(memberId);
+
+        // 에러 체크
+        emailToken.setExpirationDate(LocalDateTime.now().plusMinutes(5L));
+        emailToken.setExpired(false);
+        emailToken.setMemberId(memberId);
+
         emailTokenRepository.save(emailToken);
 
 //        이메일 전송
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(receiverEmail);
         mailMessage.setSubject("회원가입 이메일 인증");
-        mailMessage.setText("http://[서버주소]/confirm-email?token="+emailToken.getId());
+        mailMessage.setText("http://[서버주소]/confirm-email?token=" + emailToken.getId());
         emailSenderService.sendEmail(mailMessage);
 
         return emailToken.getId(); // 인증 전송 시 토큰 반환
     }
 
-//    public EmailToken findByIdAndExpirationDateAfterAndExpired(String emailTokenId){
-public EmailToken findByIdAndExpirationDateAfterAndExpired(String emailTokenId) {
+    public EmailToken findByIdAndExpirationDateAfterAndExpired(String emailTokenId) {
         Optional<EmailToken> emailToken = emailTokenRepository.findByIdAndExpirationDateAfterAndExpired(emailTokenId, LocalDateTime.now(), false);
 
         return emailToken.orElseThrow();

@@ -1,0 +1,30 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <div th:replace="thymeleaf/fragments/header :: header"></div>
+    <link rel="stylesheet" href="/css/join.css">
+</head>
+<body>
+<div th:replace="thymeleaf/fragments/nav :: nav"></div>
+<div id="container" class="container">
+    <div class="content">
+        <div class="join_wrap">
+            <form id="join_frm" action="/member/joinBeforeVerified" method="post">
+                <div class="join_title">회원가입</div>
+                <div class="join_box">
+                    <input type="text" placeholder="아이디" name="id" id="id" value="id4">
+                    <span id="id_ck" class="dpn">이미 사용중인 아이디입니다.</span>
+                    <input type="text" placeholder="닉네임" name="nickname" id="nickname" value="niceGuy">
+                    <span id="nickname_ck" class="dpn">이미 사용중인 닉네임입니다.</span>
+                    <input type="password" placeholder="비밀번호" name="password" id="password" value="123">
+                    <input type="password" placeholder="비밀번호 확인" id="password_ck" value="123">
+                    <input type="text" placeholder="이메일" name="email" id="email" class="email" value="qkrqhdtn3@gmail.com">
+                </div>
+<!--                <button type="button" id="join" class="join_btn">가입하기</button>-->
+                <button type="submit" id="join" class="join_btn">가입하기</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:replace="thymeleaf/fragments/footer :: footer"></div>
+</body>
+</html>

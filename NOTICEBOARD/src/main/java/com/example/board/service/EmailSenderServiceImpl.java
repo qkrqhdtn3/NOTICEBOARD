@@ -3,6 +3,7 @@ package com.example.board.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -10,7 +11,8 @@ import org.springframework.stereotype.Service;
 public class EmailSenderServiceImpl {
     private final JavaMailSender javaMailSender;
 
-    public void sendEmail(SimpleMailMessage email){
+//    @Async
+    public void sendEmail(SimpleMailMessage email) {
         javaMailSender.send(email);
     }
 }
