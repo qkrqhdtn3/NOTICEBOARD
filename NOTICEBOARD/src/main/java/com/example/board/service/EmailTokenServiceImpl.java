@@ -8,6 +8,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+import javax.mail.internet.InternetAddress;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -36,7 +37,13 @@ public class EmailTokenServiceImpl {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(receiverEmail);
         mailMessage.setSubject("회원가입 이메일 인증");
-        mailMessage.setText("http://[서버주소]/confirm-email?token=" + emailToken.getId());
+        mailMessage.setText("http://localhost:8081/confirm-email?token=" + emailToken.getId());
+        mailMessage.setFrom("qkrqhdtn3@naver.com");
+//        try {
+//            mailMessage.setFrom(new InternetAddress("qkrqhdtn3"));
+//        } catch (Exception e){
+//            log.warn("EmailTokenServiceImpl.createEmailToken()" + e);
+//        }
         emailSenderService.sendEmail(mailMessage);
 
         return emailToken.getId(); // 인증 전송 시 토큰 반환

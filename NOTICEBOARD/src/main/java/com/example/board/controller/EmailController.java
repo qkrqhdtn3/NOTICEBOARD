@@ -19,7 +19,7 @@ import javax.validation.Valid;
 @RequestMapping
 public class EmailController {
     private final EmailServiceImpl emailService;
-//    http://localhost:8081/confirm-email?token=1
+//    http://localhost:8081/confirm-email?token=3addc9cb-d14b-4f26-838e-a85de79584ca
     @GetMapping("/confirm-email")
     public String viewConfirmEmail(@Valid @RequestParam String token){
 //        try{
@@ -28,6 +28,6 @@ public class EmailController {
 //
 //        }
         boolean result = emailService.verifyEmail(token);
-        return "login";
+        return "thymeleaf/member/login";
     }
 }

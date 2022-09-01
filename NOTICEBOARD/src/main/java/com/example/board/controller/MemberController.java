@@ -9,6 +9,7 @@ import com.example.board.domain.Member;
 import com.example.board.service.EmailTokenServiceImpl;
 import com.example.board.service.MemberServiceImpl;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Random;
 
+@Slf4j
 @RequiredArgsConstructor
 @Controller
 public class MemberController {
@@ -69,9 +71,13 @@ public class MemberController {
 //    }
     @RequestMapping(value = "member/joinBeforeVerified", method = RequestMethod.POST)
     public String joinBeforeVerified(HttpServletRequest request, Member member) {
-        member.setId(request.getParameter("id"));
-        member.setPassword(request.getParameter("password"));
-        member.setName(request.getParameter("name"));
+//        log.warn("id: "+request.getParameter("id") + "\npassword: "+request.getParameter("password")+"\nname: "+request.getParameter("name")+"\nemail: "+request.getParameter("email"));
+
+//        member.setId(request.getParameter("id"));
+//        member.setPassword(request.getParameter("password"));
+        member.setName(request.getParameter("nickname"));
+
+        log.warn("id: " + member.getId() + "\npassword: " + member.getPassword() + "\nname: " + member.getName() + "\nemail: " + request.getParameter("email"));
         memberService.join(member);
         emailTokenService.createEmailToken(request.getParameter("id"), request.getParameter("email"));
         return "thymeleaf/member/login";
