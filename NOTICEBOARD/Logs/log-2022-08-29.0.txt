@@ -1,0 +1,61 @@
+[INFO ] 09:30:37.199 c.e.b.NoticeboardApplicationTests - Starting NoticeboardApplicationTests using Java 17.0.4 on LAPTOP-4P86VC81 with PID 18732 (started by qkrqh in C:\Users\qkrqh\IdeaProjects\NOTICEBOARD\NOTICEBOARD)
+[INFO ] 09:30:37.201 c.e.b.NoticeboardApplicationTests - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 09:30:38.401 c.u.j.c.EnableEncryptablePropertiesBeanFactoryPostProcessor - Post-processing PropertySource instances
+[INFO ] 09:30:38.402 c.u.j.EncryptablePropertySourceConverter - Skipping PropertySource configurationProperties [class org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource
+[INFO ] 09:30:38.404 c.u.j.EncryptablePropertySourceConverter - Converting PropertySource test [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+[INFO ] 09:30:38.404 c.u.j.EncryptablePropertySourceConverter - Converting PropertySource Inlined Test Properties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+[INFO ] 09:30:38.404 c.u.j.EncryptablePropertySourceConverter - Skipping PropertySource servletConfigInitParams [class org.springframework.core.env.PropertySource$StubPropertySource
+[INFO ] 09:30:38.404 c.u.j.EncryptablePropertySourceConverter - Converting PropertySource servletContextInitParams [org.springframework.web.context.support.ServletContextPropertySource] to EncryptableEnumerablePropertySourceWrapper
+[INFO ] 09:30:38.404 c.u.j.EncryptablePropertySourceConverter - Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+[INFO ] 09:30:38.405 c.u.j.EncryptablePropertySourceConverter - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+[INFO ] 09:30:38.405 c.u.j.EncryptablePropertySourceConverter - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+[INFO ] 09:30:38.405 c.u.j.EncryptablePropertySourceConverter - Converting PropertySource Config resource 'class path resource [application.yml]' via location 'optional:classpath:/' [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+[INFO ] 09:30:38.526 c.u.j.f.DefaultLazyPropertyFilter - Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+[INFO ] 09:30:38.542 c.u.j.r.DefaultLazyPropertyResolver - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+[INFO ] 09:30:38.544 c.u.j.d.DefaultLazyPropertyDetector - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+[INFO ] 09:30:38.576 c.u.j.encryptor.DefaultLazyEncryptor - Found Custom Encryptor Bean org.jasypt.encryption.pbe.PooledPBEStringEncryptor@32eae6f2 with name: jasyptStringEncryptor
+[INFO ] 09:30:40.671 c.e.b.NoticeboardApplicationTests - Started NoticeboardApplicationTests in 3.888 seconds (JVM running for 10.56)
+[INFO ] 09:31:13.859 c.e.board.NoticeboardApplication - Starting NoticeboardApplication using Java 17.0.4 on LAPTOP-4P86VC81 with PID 19420 (C:\Users\qkrqh\IdeaProjects\NOTICEBOARD\NOTICEBOARD\build\classes\java\main started by qkrqh in C:\Users\qkrqh\IdeaProjects\NOTICEBOARD\NOTICEBOARD)
+[INFO ] 09:31:13.861 c.e.board.NoticeboardApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 09:31:14.069 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 09:31:14.069 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 09:31:15.117 c.u.j.c.EnableEncryptablePropertiesBeanFactoryPostProcessor - Post-processing PropertySource instances
+[INFO ] 09:31:15.119 c.u.j.EncryptablePropertySourceConverter - Skipping PropertySource configurationProperties [class org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource
+[INFO ] 09:31:15.121 c.u.j.EncryptablePropertySourceConverter - Skipping PropertySource servletConfigInitParams [class org.springframework.core.env.PropertySource$StubPropertySource
+[INFO ] 09:31:15.121 c.u.j.EncryptablePropertySourceConverter - Skipping PropertySource servletContextInitParams [class org.springframework.core.env.PropertySource$StubPropertySource
+[INFO ] 09:31:15.122 c.u.j.EncryptablePropertySourceConverter - Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+[INFO ] 09:31:15.122 c.u.j.EncryptablePropertySourceConverter - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+[INFO ] 09:31:15.122 c.u.j.EncryptablePropertySourceConverter - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+[INFO ] 09:31:15.122 c.u.j.EncryptablePropertySourceConverter - Converting PropertySource Config resource 'class path resource [application.yml]' via location 'optional:classpath:/' [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+[INFO ] 09:31:15.122 c.u.j.EncryptablePropertySourceConverter - Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+[INFO ] 09:31:15.265 c.u.j.f.DefaultLazyPropertyFilter - Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+[INFO ] 09:31:15.278 c.u.j.r.DefaultLazyPropertyResolver - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+[INFO ] 09:31:15.280 c.u.j.d.DefaultLazyPropertyDetector - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+[INFO ] 09:31:15.533 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+[INFO ] 09:31:15.545 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+[INFO ] 09:31:15.545 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] 09:31:15.545 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+[INFO ] 09:31:15.609 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 09:31:15.609 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1539 ms
+[INFO ] 09:31:15.669 c.u.j.encryptor.DefaultLazyEncryptor - Found Custom Encryptor Bean org.jasypt.encryption.pbe.PooledPBEStringEncryptor@ed4e172 with name: jasyptStringEncryptor
+[INFO ] 09:31:16.406 o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 09:31:16.422 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+[INFO ] 09:31:16.441 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+[INFO ] 09:31:16.444 c.u.j.c.RefreshScopeRefreshedEventListener - Refreshing cached encryptable property sources on ServletWebServerInitializedEvent
+[INFO ] 09:31:16.444 c.u.j.c.CachingDelegateEncryptablePropertySource - Property Source systemProperties refreshed
+[INFO ] 09:31:16.444 c.u.j.c.CachingDelegateEncryptablePropertySource - Property Source systemEnvironment refreshed
+[INFO ] 09:31:16.444 c.u.j.c.CachingDelegateEncryptablePropertySource - Property Source random refreshed
+[INFO ] 09:31:16.444 c.u.j.c.CachingDelegateEncryptablePropertySource - Property Source Config resource 'class path resource [application.yml]' via location 'optional:classpath:/' refreshed
+[INFO ] 09:31:16.444 c.u.j.c.CachingDelegateEncryptablePropertySource - Property Source devtools refreshed
+[INFO ] 09:31:16.444 c.u.j.EncryptablePropertySourceConverter - Converting PropertySource server.ports [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+[INFO ] 09:31:16.444 c.u.j.EncryptablePropertySourceConverter - Skipping PropertySource configurationProperties [class org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource
+[INFO ] 09:31:16.444 c.u.j.EncryptablePropertySourceConverter - Skipping PropertySource servletConfigInitParams [class org.springframework.core.env.PropertySource$StubPropertySource
+[INFO ] 09:31:16.444 c.u.j.EncryptablePropertySourceConverter - Converting PropertySource servletContextInitParams [org.springframework.web.context.support.ServletContextPropertySource] to EncryptableEnumerablePropertySourceWrapper
+[INFO ] 09:31:16.459 c.e.board.NoticeboardApplication - Started NoticeboardApplication in 3.115 seconds (JVM running for 3.711)
+[INFO ] 09:31:17.798 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 09:31:17.798 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 09:31:17.799 o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[INFO ] 09:31:17.838 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 09:31:18.190 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 09:31:49.135 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 09:31:49.143 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

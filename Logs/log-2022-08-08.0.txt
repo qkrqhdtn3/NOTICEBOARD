@@ -1,0 +1,58 @@
+[INFO ] 14:57:12.678 c.e.board.NoticeboardApplication - Starting NoticeboardApplication using Java 17.0.4 on LAPTOP-4P86VC81 with PID 12696 (C:\Users\qkrqh\IdeaProjects\NOTICEBOARD\NOTICEBOARD\build\classes\java\main started by qkrqh in C:\Users\qkrqh\IdeaProjects\NOTICEBOARD)
+[INFO ] 14:57:12.679 c.e.board.NoticeboardApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 14:57:12.825 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 14:57:12.825 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 14:57:13.560 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[INFO ] 14:57:13.570 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 14:57:13.571 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] 14:57:13.571 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+[INFO ] 14:57:13.695 org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[INFO ] 14:57:13.701 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 14:57:13.701 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 873 ms
+[INFO ] 14:57:14.010 o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 14:57:14.021 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 14:57:14.039 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[INFO ] 14:57:14.047 c.e.board.NoticeboardApplication - Started NoticeboardApplication in 1.827 seconds (JVM running for 2.453)
+[INFO ] 14:58:55.125 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 14:58:55.126 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 14:58:55.126 o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+[INFO ] 14:59:37.271 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 14:59:37.492 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 15:00:45.836 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 15:00:45.841 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 15:07:36.847 c.e.board.NoticeboardApplication - Starting NoticeboardApplication using Java 17.0.4 on LAPTOP-4P86VC81 with PID 3032 (C:\Users\qkrqh\IdeaProjects\NOTICEBOARD\NOTICEBOARD\build\classes\java\main started by qkrqh in C:\Users\qkrqh\IdeaProjects\NOTICEBOARD)
+[INFO ] 15:07:36.848 c.e.board.NoticeboardApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 15:07:37.010 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 15:07:37.010 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 15:07:37.745 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[INFO ] 15:07:37.752 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 15:07:37.753 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] 15:07:37.753 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+[INFO ] 15:07:37.879 org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[INFO ] 15:07:37.885 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 15:07:37.885 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 875 ms
+[INFO ] 15:07:38.248 o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 15:07:38.260 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 15:07:38.279 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[INFO ] 15:07:38.293 c.e.board.NoticeboardApplication - Started NoticeboardApplication in 1.787 seconds (JVM running for 2.26)
+[INFO ] 15:07:43.956 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 15:07:43.957 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 15:07:43.958 o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[INFO ] 15:08:11.448 c.e.board.NoticeboardApplication - Starting NoticeboardApplication using Java 17.0.4 on LAPTOP-4P86VC81 with PID 1332 (C:\Users\qkrqh\IdeaProjects\NOTICEBOARD\NOTICEBOARD\build\classes\java\main started by qkrqh in C:\Users\qkrqh\IdeaProjects\NOTICEBOARD)
+[INFO ] 15:08:11.449 c.e.board.NoticeboardApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 15:08:11.607 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 15:08:11.607 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 15:08:12.357 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[INFO ] 15:08:12.367 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 15:08:12.367 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] 15:08:12.367 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+[INFO ] 15:08:12.516 org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[INFO ] 15:08:12.524 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 15:08:12.524 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 916 ms
+[INFO ] 15:08:12.878 o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 15:08:12.889 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 15:08:12.908 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[INFO ] 15:08:12.924 c.e.board.NoticeboardApplication - Started NoticeboardApplication in 1.825 seconds (JVM running for 2.217)
+[INFO ] 15:08:15.730 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 15:08:15.731 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 15:08:15.731 o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
