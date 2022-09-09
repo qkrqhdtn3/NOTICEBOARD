@@ -9,7 +9,7 @@
 <body>
 <div th:replace="thymeleaf/fragments/nav :: nav"></div>
 <form id="frm">
-    <input type="hidden" value="" name="seq" id="seq">
+    <input type="hidden" value="" name="boardId" id="boardId">
     <table>
         <thead>
         <tr>
@@ -23,12 +23,12 @@
         </thead>
         <tbody>
         <tr th:each="board : ${list}">
-            <td th:text="${board.seq}"></td>
-<!--            <td><a href="#" th:text="${board.subject}" th:seq="${board.seq}" th:onclick="fn_goView(this.getAttribute('seq'))"></a></td>-->
-            <td><a href="#" th:text="${board.subject}" th:onclick="'fn_goView('+${board.seq}+')'"></a></td>
+            <td th:text="${board.boardId}"></td>
+<!--            <td><a href="#" th:text="${board.subject}" th:boardId="${board.boardId}" th:onclick="fn_goView(this.getAttribute('boardId'))"></a></td>-->
+            <td><a href="#" th:text="${board.subject}" th:onclick="'fn_goView('+${board.boardId}+')'"></a></td>
             <td th:text="${board.content}"></td>
-            <td th:text="${board.name}"></td>
-            <td th:text="${board.reg_date}"></td>
+            <td th:text="${board.memberName}"></td>
+            <td th:text="${board.regDate}"></td>
             <td th:text="${board.readCount}"></td>
         </tr>
         </tbody>

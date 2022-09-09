@@ -37,3 +37,4 @@ out/
 .vscode/
 
 src/main/resources/application.yml
+#git filter-repo --invert-paths --path NOTICEBOARD/src/main/resources/application.yml --partial

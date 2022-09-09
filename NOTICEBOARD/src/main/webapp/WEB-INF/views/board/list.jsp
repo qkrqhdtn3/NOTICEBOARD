@@ -14,7 +14,7 @@
 </head>
 <body>
 	<form id="frm">
-		<input type="hidden" value="" name="seq" id="seq">
+		<input type="hidden" value="" name="boardId" id="boardId">
 		<table>
 			<thead>
 				<tr>
@@ -29,8 +29,8 @@
 			<tbody>
 				<c:forEach items="${list}" var="list">
 					<tr>
-						<td>${list.seq}</td>
-						<td><a href="#" onclick="fn_goView(${list.seq})">${list.subject }</a></td>
+						<td>${list.boardId}</td>
+						<td><a href="#" onclick="fn_goView(${list.boardId})">${list.subject }</a></td>
 						<td>${list.content }</td>
 						<td>${list.name }</td>
 						<fmt:parseDate value="${list.reg_date }" var="dateValue"

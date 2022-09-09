@@ -46,7 +46,8 @@ public class MemberController {
     public String regi(MemberDTO dto, HttpSession session) {
         MemberDTO dto2 = service.login(dto);
         if (dto != null) {
-            session.setAttribute("id", dto2.getId());
+            session.setAttribute("memberId", dto2.getMemberId());
+            session.setAttribute("memberName", dto2.getMemberName());
             return "Y";
         } else {
             return "N";
@@ -66,20 +67,20 @@ public class MemberController {
 
     //    @RequestMapping(value = "member/joinBeforeVerified", method = RequestMethod.POST)
 //    public String joinBeforeVerified(HttpServletRequest request) {
-//        emailTokenService.createEmailToken(request.getParameter("id"), request.getParameter("email"));
+//        emailTokenService.createEmailToken(request.getParameter("memberId"), request.getParameter("email"));
 //        return "thymeleaf/member/login";
 //    }
     @RequestMapping(value = "member/joinBeforeVerified", method = RequestMethod.POST)
     public String joinBeforeVerified(HttpServletRequest request, Member member) {
-//        log.warn("id: "+request.getParameter("id") + "\npassword: "+request.getParameter("password")+"\nname: "+request.getParameter("name")+"\nemail: "+request.getParameter("email"));
+//        log.warn("memberId: "+request.getParameter("memberId") + "\npassword: "+request.getParameter("password")+"\nnickname: "+request.getParameter("nickname")+"\nemail: "+request.getParameter("email"));
 
-//        member.setId(request.getParameter("id"));
+//        member.setMemberId(request.getParameter("memberId"));
 //        member.setPassword(request.getParameter("password"));
-        member.setName(request.getParameter("nickname"));
+        member.setNickname(request.getParameter("nickname"));
 
-        log.warn("id: " + member.getId() + "\npassword: " + member.getPassword() + "\nname: " + member.getName() + "\nemail: " + request.getParameter("email"));
+        log.warn("memberId: " + member.getMemberId() + "\npassword: " + member.getPassword() + "\nnickname: " + member.getNickname() + "\nemail: " + request.getParameter("email"));
         memberService.join(member);
-        emailTokenService.createEmailToken(request.getParameter("id"), request.getParameter("email"));
+        emailTokenService.createEmailToken(request.getParameter("memberId"), request.getParameter("email"));
         return "thymeleaf/member/login";
     }
 

@@ -7,15 +7,15 @@ import com.example.board.domain.BoardDTO;
 public interface BoardDAO {
 	public List<BoardDTO> list() throws Exception;
 
-	Integer getMaxSeq();
+	Integer getMaxBoardId();
 
 	int regi(BoardDTO dto);
 	
-	public List<BoardDTO> view(int seq);
+	public List<BoardDTO> view(int boardId);
 	
-	public void updateReadCount(int seq);
+	public void updateReadCount(int boardId);
 	
 	public int update(BoardDTO dto);
 	
-	public int delete(int seq);
+	public int delete(int boardId);
 }

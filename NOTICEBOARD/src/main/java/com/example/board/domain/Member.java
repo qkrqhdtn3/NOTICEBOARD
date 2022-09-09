@@ -13,9 +13,10 @@ import javax.persistence.Table;
 public class Member {
 
     @Id
-    private String id;
+    private long memberId;
     private String password;
-    private String name;
+    private String memberName;
+    private String nickname;
     private boolean verified;
 
     public void setVerified(){

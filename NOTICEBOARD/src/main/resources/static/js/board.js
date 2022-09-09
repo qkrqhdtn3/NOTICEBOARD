@@ -30,7 +30,7 @@ function fn_boardRegi(){
 };
 
 function fn_boardUpdate(){
-	var seq = $("#seq").val();
+	var boardId = $("#boardId").val();
 	var data = $("#frm").serialize();
 	
 	$.ajax({
@@ -40,8 +40,8 @@ function fn_boardUpdate(){
 		success : function(data){
 			if(data=="Y"){
 				alert("글 수정이 완료되었습니다.");
-				// alert(seq);
-				fn_goView(seq);
+				// alert(boardId);
+				fn_goView(boardId);
 			} else{
 				alert("글 수정이 실패되었습니다.");
 			}
@@ -52,11 +52,11 @@ function fn_boardUpdate(){
 	});
 };
 
-function fn_boardDelete(seq){
+function fn_boardDelete(boardId){
 	$.ajax({
 		type : "POST",
 		url : "/board/delete",
-		data : {seq : seq},
+		data : {boardId : boardId},
 		success : function(data){
 			if(data=="Y"){
 				alert("글 삭제가 완료되었습니다.");
@@ -70,10 +70,10 @@ function fn_boardDelete(seq){
 	})
 };
 
-function fn_goView(seq){
+function fn_goView(boardId){
 	// alert("goView");
-	$("#seq").val(seq);
-	// alert(seq);
+	$("#boardId").val(boardId);
+	// alert(boardId);
 
 	var f = $("#frm");
 	f.attr("action", "/board/view");
@@ -82,7 +82,7 @@ function fn_goView(seq){
 	// $.ajax({
 	// 	type : "POST",
 	// 	url : "/board/view",
-	// 	data : {seq : seq},
+	// 	data : {boardId : boardId},
 	// 	success : function(data){
 	// 		if(data=="Y"){
 	// 			alert("글 조회가 완료되었습니다.");
@@ -96,8 +96,8 @@ function fn_goView(seq){
 	// });
 };
 
-function fn_goUpdateView(seq){
-	$("#seq").val(seq);
+function fn_goUpdateView(boardId){
+	$("#boardId").val(boardId);
 	
 	var f = $("#frm");
 	f.attr("action", "/board/goUpdateView");

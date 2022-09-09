@@ -17,66 +17,66 @@ import lombok.extern.slf4j.Slf4j;
 @Repository
 public class BoardDAOImpl implements BoardDAO {
 
-	private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-	private final BoardRowMapper boardRowMapper;
+    private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+    private final BoardRowMapper boardRowMapper;
 
-	public BoardDAOImpl(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
-		this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
-		this.boardRowMapper = new BoardRowMapper();
-	}
+    public BoardDAOImpl(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
+        this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
+        this.boardRowMapper = new BoardRowMapper();
+    }
 
-	@Override
-	public List<BoardDTO> list() throws Exception {
+    @Override
+    public List<BoardDTO> list() throws Exception {
 //		log.debug("query : {}", BoardSql.SELECT);
 
-		return namedParameterJdbcTemplate.query(BoardSql.SELECT, EmptySqlParameterSource.INSTANCE, this.boardRowMapper);
-	}
+        return namedParameterJdbcTemplate.query(BoardSql.SELECT, EmptySqlParameterSource.INSTANCE, this.boardRowMapper);
+    }
 
-	@Override
-	public Integer getMaxSeq() {
-		return namedParameterJdbcTemplate.queryForObject(BoardSql.MAX_SEQ, (SqlParameterSource) null, Integer.class);
-	}
+    @Override
+    public Integer getMaxBoardId() {
+        return namedParameterJdbcTemplate.queryForObject(BoardSql.MAX_BOARDID, (SqlParameterSource) null, Integer.class);
+    }
 
-	@Override
-	public int regi(BoardDTO dto) {
+    @Override
+    public int regi(BoardDTO dto) {
 //		log.warn("query : {}", BoardSql.INSERT);
-		SqlParameterSource sqlParameterSource = new MapSqlParameterSource("seq", dto.getSeq())
-				.addValue("subject", dto.getSubject()).addValue("content", dto.getContent())
-				.addValue("name", dto.getName()).addValue("reg_date", dto.getReg_date())
-				.addValue("readCount", dto.getReadCount());
-		return namedParameterJdbcTemplate.update(BoardSql.INSERT, sqlParameterSource);
-	}
+        SqlParameterSource sqlParameterSource = new MapSqlParameterSource("boardId", dto.getBoardId())
+                .addValue("memberId", dto.getMemberId()).addValue("subject", dto.getSubject())
+                .addValue("content", dto.getContent()).addValue("regDate", dto.getReg_date())
+                .addValue("readCount", dto.getReadCount());
+        return namedParameterJdbcTemplate.update(BoardSql.INSERT, sqlParameterSource);
+    }
 
-	@Override
-	public List<BoardDTO> view(int seq) {
+    @Override
+    public List<BoardDTO> view(int boardId) {
 //		log.warn("dao.view()");
-		String qry = BoardSql.SELECT + BoardSql.SEQ_CONDITION;
-		SqlParameterSource sqlParameterSource = new MapSqlParameterSource("seq", seq);
-		return namedParameterJdbcTemplate.query(qry, sqlParameterSource, this.boardRowMapper);
-	}
+        String qry = BoardSql.SELECT + BoardSql.BOARDID_CONDITION;
+        SqlParameterSource sqlParameterSource = new MapSqlParameterSource("boardId", boardId);
+        return namedParameterJdbcTemplate.query(qry, sqlParameterSource, this.boardRowMapper);
+    }
 
-	@Override
-	public void updateReadCount(int seq) {
+    @Override
+    public void updateReadCount(int boardId) {
 //		log.warn("dao.updateReadCount()");
-		String qry = BoardSql.UPDATE_READCOUNT + BoardSql.SEQ_CONDITION;
-		SqlParameterSource sqlParameterSource = new MapSqlParameterSource("seq", seq);
-		namedParameterJdbcTemplate.update(qry, sqlParameterSource);
-	}
+        String qry = BoardSql.UPDATE_READ_COUNT + BoardSql.BOARDID_CONDITION;
+        SqlParameterSource sqlParameterSource = new MapSqlParameterSource("boardId", boardId);
+        namedParameterJdbcTemplate.update(qry, sqlParameterSource);
+    }
 
-	@Override
-	public int update(BoardDTO dto) {
-		log.warn("dao.update()");
-		String qry = BoardSql.UPDATE + BoardSql.SEQ_CONDITION;
-		SqlParameterSource sqlParameterSource = new MapSqlParameterSource("seq", dto.getSeq())
-				.addValue("subject", dto.getSubject()).addValue("content", dto.getContent());
-		return namedParameterJdbcTemplate.update(qry, sqlParameterSource);
-	}
+    @Override
+    public int update(BoardDTO dto) {
+        log.warn("dao.update()");
+        String qry = BoardSql.UPDATE + BoardSql.BOARDID_CONDITION;
+        SqlParameterSource sqlParameterSource = new MapSqlParameterSource("boardId", dto.getBoardId())
+                .addValue("subject", dto.getSubject()).addValue("content", dto.getContent());
+        return namedParameterJdbcTemplate.update(qry, sqlParameterSource);
+    }
 
-	@Override
-	public int delete(int seq) {
-		log.warn("dao.delete()");
-		String qry = BoardSql.DELETE + BoardSql.SEQ_CONDITION;
-		SqlParameterSource sqlParameterSource = new MapSqlParameterSource("seq", seq);
-		return namedParameterJdbcTemplate.update(qry, sqlParameterSource);
-	}
+    @Override
+    public int delete(int boardId) {
+        log.warn("dao.delete()");
+        String qry = BoardSql.DELETE + BoardSql.BOARDID_CONDITION;
+        SqlParameterSource sqlParameterSource = new MapSqlParameterSource("boardId", boardId);
+        return namedParameterJdbcTemplate.update(qry, sqlParameterSource);
+    }
 }

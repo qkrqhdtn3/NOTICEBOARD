@@ -13,7 +13,7 @@
 </head>
 <body>
 	<form id="frm">
-		<input type="hidden" value="${view.seq }" name="seq" id="seq">
+		<input type="hidden" value="${view.boardId }" name="boardId" id="boardId">
 		제목 : <input type="text" placeholder="제목" id="subject" name="subject"
 			value="${view.subject }"> 작성자 : <input type="text"
 			placeholder="작성자" id="name" name="name" readonly="readonly"

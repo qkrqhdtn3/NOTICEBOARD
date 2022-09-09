@@ -12,11 +12,11 @@ public class BoardRowMapper implements RowMapper<BoardDTO>{
 	@Override
 	public BoardDTO mapRow(ResultSet rs, int rowNum) throws SQLException{
 		BoardDTO boardDTO = new BoardDTO();
-		boardDTO.setSeq(rs.getInt("seq"));
+		boardDTO.setBoardId(rs.getLong("boardId"));
+		boardDTO.setMemberId(rs.getLong("memberId"));
 		boardDTO.setSubject(rs.getString("subject"));
 		boardDTO.setContent(rs.getString("content"));
-		boardDTO.setName(rs.getString("name"));
-		boardDTO.setReg_date(rs.getString("reg_date"));
+		boardDTO.setRegdate(rs.getString("regDate"));
 		boardDTO.setReadCount(rs.getInt("readCount"));
 		return boardDTO;
 	}

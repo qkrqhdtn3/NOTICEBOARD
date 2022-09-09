@@ -12,7 +12,7 @@
 <body>
 	<form id="frm">
 		<div>
-			아이디 : <input type="text" id="id" name="id" value="id1">
+			아이디 : <input type="text" id="memberName" name="memberName" value="memberName1">
 		</div>
 		<div>
 			비밀번호 : <input type="text" id="password" name="password" value="password">

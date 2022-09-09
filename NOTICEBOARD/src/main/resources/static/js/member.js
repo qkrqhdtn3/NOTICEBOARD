@@ -1,6 +1,6 @@
 // alert("hi");
 function fn_login() {
-    //var id=$("#id").val();
+    //var memberId=$("#memberId").val();
     //var password=$("#password").val();
     var data = $("#frm").serialize();
 
@@ -52,7 +52,7 @@ function fn_join() {
 $(function () {
     var email_auth_cd = '';
     $('#join').click(function () {
-        if ($('#id').val() == "") {
+        if ($('#memberId').val() == "") {
             alert("아이디를 입력해주세요.");
             return false;
         }
@@ -95,17 +95,17 @@ $(function () {
         });
     });
 
-    $('#id').focusout(function () {
-        var id = $('#id').val();
+    $('#memberId').focusout(function () {
+        var memberId = $('#memberId').val();
         $.ajax({
             type: "POST",
-            url: "/idCheck",
-            data: {id: id},
+            url: "/memberIdCheck",
+            data: {memberId: memberId},
             success: function (data) {
                 if (data == "Y") {
-                    $('#id_ck').removeClass("dpn");
+                    $('#memberId_ck').removeClass("dpn");
                 } else {
-                    $('#id_ck').addClass("dpn");
+                    $('#memberId_ck').addClass("dpn");
                 }
             },
             error: function (data) {

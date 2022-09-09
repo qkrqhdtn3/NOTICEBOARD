@@ -9,9 +9,9 @@
 <body>
 <div th:replace="thymeleaf/fragments/nav :: nav"></div>
 <form id="frm">
-    <input type="hidden" th:value="${view.seq}" name="seq" id="seq">
+    <input type="hidden" th:value="${view.boardId}" name="boardId" id="boardId">
     제목 : <input type="text" placeholder="제목" id="subject" name="subject" th:value="${view.subject}">
-    작성자 : <input type="text" placeholder="작성자" id="name" name="name" readonly="readonly" th:value="${view.name}">
+    작성자 : <input type="text" placeholder="작성자" id="memberName" name="memberName" readonly="readonly" th:value="${view.memberName}">
     <div>
         내용 : <input type="text" placeholder="내용" id="content" name="content" th:value="${view.content}">
     </div>

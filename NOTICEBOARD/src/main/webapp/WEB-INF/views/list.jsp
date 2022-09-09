@@ -21,7 +21,7 @@
 	<tbody>
 		<c:forEach items="${list}" var="list">
 			<tr>
-				<td>${list.seq}</td>
+				<td>${list.boardId}</td>
 				<td>${list.subject }</td>
 				<td>${list.content }</td>
 				<td>${list.name }</td>

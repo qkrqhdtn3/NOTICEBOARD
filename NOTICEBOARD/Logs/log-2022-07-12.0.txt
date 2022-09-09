@@ -29,7 +29,7 @@
 [INFO ] 16:39:23.238 o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
 [INFO ] 16:39:23.249 com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
 [INFO ] 16:39:23.262 com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
-[ERROR] 16:39:23.265 o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [	SELECT seq, subject, content, name, reg_date, readCount FROM board WHERE 1=1
+[ERROR] 16:39:23.265 o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [	SELECT boardId, subject, content, name, reg_date, readCount FROM board WHERE 1=1
 ]; nested exception is java.sql.SQLSyntaxErrorException: Table 'world.board' doesn't exist] with root cause
 java.sql.SQLSyntaxErrorException: Table 'world.board' doesn't exist
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
@@ -105,7 +105,7 @@ java.sql.SQLSyntaxErrorException: Table 'world.board' doesn't exist
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-[ERROR] 16:41:31.999 o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [	SELECT seq, subject, content, name, reg_date, readCount FROM board WHERE 1=1
+[ERROR] 16:41:31.999 o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [	SELECT boardId, subject, content, name, reg_date, readCount FROM board WHERE 1=1
 ]; nested exception is java.sql.SQLSyntaxErrorException: Table 'world.board' doesn't exist] with root cause
 java.sql.SQLSyntaxErrorException: Table 'world.board' doesn't exist
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)

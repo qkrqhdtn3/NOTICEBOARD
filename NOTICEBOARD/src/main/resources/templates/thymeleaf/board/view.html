@@ -11,13 +11,13 @@
 <body>
 <div th:replace="thymeleaf/fragments/nav :: nav"></div>
 <form id="frm">
-    <input type="hidden" value="" name="seq" id="seq">
+    <input type="hidden" value="" name="boardId" id="boardId">
     <div><span th:text="'제목 : '+${view.subject} "/><span th:text="'조회수 : '+${view.readCount}"/></div>
-    <div><span th:text="'작성자 : '+${view.name}"/></div>
+    <div><span th:text="'작성자 : '+${view.memberName}"/></div>
     <div><span th:text="'내용 : '+${view.content}"/></div>
     <button type="button" onclick='location.href="/board/list"'>목록</button>
-    <button type="button" th:onclick="'fn_goUpdateView('+${view.seq}+')'">수정</button>
-    <button type="button" th:onclick="'fn_boardDelete('+${view.seq}+')'">삭제</button>
+    <button type="button" th:onclick="'fn_goUpdateView('+${view.boardId}+')'">수정</button>
+    <button type="button" th:onclick="'fn_boardDelete('+${view.boardId}+')'">삭제</button>
 </form>
 <div th:replace="thymeleaf/fragments/footer :: footer"></div>
 </body>

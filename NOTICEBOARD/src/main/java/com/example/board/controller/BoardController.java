@@ -60,9 +60,9 @@ public class BoardController {
     @RequestMapping(value = "/view", method = RequestMethod.POST)
     public String view(Model model, HttpServletRequest request) throws Exception {
 //		log.warn("controller.view()");
-//		log.warn(request.getParameter("seq"));
-//        BoardDTO dto = service.view(Integer.parseInt((String) request.getParameter("seq")));
-        BoardDTO dto = service.view(Integer.parseInt((String) request.getParameter("seq")));
+//		log.warn(request.getParameter("boardId"));
+//        BoardDTO dto = service.view(Integer.parseInt((String) request.getParameter("boardId")));
+        BoardDTO dto = service.view(Integer.parseInt((String) request.getParameter("boardId")));
         model.addAttribute("view", dto);
         return "thymeleaf/board/view";
     }
@@ -70,9 +70,9 @@ public class BoardController {
     @RequestMapping(value = "/goUpdateView", method = RequestMethod.POST)
     public String updateView(Model model, HttpServletRequest request) throws Exception {
 //		log.warn("controller.updateView()");
-//		log.warn(request.getParameter("seq"));
+//		log.warn(request.getParameter("boardId"));
 //		BoardDTO dto = service.view(6);
-        BoardDTO dto = service.view(Integer.parseInt((String) request.getParameter("seq")));
+        BoardDTO dto = service.view(Integer.parseInt((String) request.getParameter("boardId")));
 //		log.warn("controller.updateView()2");
         model.addAttribute("view", dto);
         return "thymeleaf/board/update";
@@ -93,7 +93,7 @@ public class BoardController {
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public String delete(HttpServletRequest request) {
 //		log.warn("controller.delete()");
-        if (service.delete(Integer.parseInt((String) request.getParameter("seq"))) == 1) {
+        if (service.delete(Integer.parseInt((String) request.getParameter("boardId"))) == 1) {
             return "Y";
         } else {
             return "N";

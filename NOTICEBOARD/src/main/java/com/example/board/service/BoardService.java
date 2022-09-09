@@ -9,9 +9,9 @@ public interface BoardService {
 
 	public int regi(BoardDTO dto) throws Exception;
 	
-	public BoardDTO view(int seq);
+	public BoardDTO view(int boardId);
 	
 	public int update(BoardDTO dto);
 	
-	public int delete(int seq);
+	public int delete(int boardId);
 }

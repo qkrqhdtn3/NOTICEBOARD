@@ -2,14 +2,14 @@ package com.example.board.domain;
 
 public class BoardSql {
 //	public static final String SELECT = """
-//			SELECT seq, subject, content, name, reg_date, readCount FROM board WHERE 1=1
+//			SELECT boardId, subject, content, memberId, regDate, readCount FROM board WHERE 1=1
 //		""";
 	public static final String SELECT = """
 				SELECT * FROM BOARD WHERE 1=1
 			""";
 
 	public static final String INSERT = """
-			INSERT INTO BOARD(seq, subject, content, name, reg_date, readcount) VALUES(:seq, :subject, :content, :name, :reg_date, 0)
+			INSERT INTO BOARD(boardId, subject, content, memberId, regDate, readcount) VALUES(:boardId, :subject, :content, :memberId, :regDate, 0)
 			""";
 
 	public static final String UPDATE = """
@@ -20,16 +20,16 @@ public class BoardSql {
 				DELETE FROM BOARD WHERE 1=1
 			""";
 	
-	public static final String UPDATE_READCOUNT = """
-				UPDATE BOARD SET readcount=readcount+1 WHERE 1=1
+	public static final String UPDATE_READ_COUNT = """
+				UPDATE BOARD SET readCount=readCount+1 WHERE 1=1
 			""";
 
-	public static final String SEQ_CONDITION = """
-				AND seq=:seq
+	public static final String BOARDID_CONDITION = """
+				AND boardId=:boardId
 			""";
 	
-	public static final String MAX_SEQ = """
-				SELECT max(seq) FROM BOARD
+	public static final String MAX_BOARDID = """
+				SELECT max(boardId) FROM BOARD
 			""";
 
 
