@@ -37,7 +37,7 @@ public class EmailTokenServiceImpl {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(receiverEmail);
         mailMessage.setSubject("회원가입 이메일 인증");
-        mailMessage.setText("http://localhost:8081/confirm-email?token=" + emailToken.getId());
+        mailMessage.setText("http://localhost:8081/confirm-email?token=" + emailToken.getEmailTokenId());
         mailMessage.setFrom("qkrqhdtn3@naver.com");
 //        try {
 //            mailMessage.setFrom(new InternetAddress("qkrqhdtn3"));
@@ -46,11 +46,11 @@ public class EmailTokenServiceImpl {
 //        }
         emailSenderService.sendEmail(mailMessage);
 
-        return emailToken.getId(); // 인증 전송 시 토큰 반환
+        return emailToken.getEmailTokenId(); // 인증 전송 시 토큰 반환
     }
 
     public EmailToken findByIdAndExpirationDateAfterAndExpired(String emailTokenId) {
-        Optional<EmailToken> emailToken = emailTokenRepository.findByIdAndExpirationDateAfterAndExpired(emailTokenId, LocalDateTime.now(), false);
+        Optional<EmailToken> emailToken = emailTokenRepository.findByEmailTokenIdAndExpirationDateAfterAndExpired(emailTokenId, LocalDateTime.now(), false);
 
         return emailToken.orElseThrow();
     }

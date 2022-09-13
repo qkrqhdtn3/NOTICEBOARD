@@ -78,7 +78,7 @@ public class MemberController {
 //        member.setPassword(request.getParameter("password"));
         member.setNickname(request.getParameter("nickname"));
 
-        log.warn("memberId: " + member.getMemberId() + "\npassword: " + member.getPassword() + "\nnickname: " + member.getNickname() + "\nemail: " + request.getParameter("email"));
+        log.warn("memberId: " + member.getMemberName() + "\npassword: " + member.getPassword() + "\nnickname: " + member.getNickname() + "\nemail: " + request.getParameter("email"));
         memberService.join(member);
         emailTokenService.createEmailToken(request.getParameter("memberId"), request.getParameter("email"));
         return "thymeleaf/member/login";

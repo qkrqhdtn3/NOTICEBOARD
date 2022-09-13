@@ -20,7 +20,7 @@ public class EmailToken {
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Id
-    private String id;
+    private String emailTokenId;
 
     @Column(name = "expirationdate")
     private LocalDateTime expirationDate;

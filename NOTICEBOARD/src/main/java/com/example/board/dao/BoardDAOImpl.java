@@ -42,7 +42,7 @@ public class BoardDAOImpl implements BoardDAO {
 //		log.warn("query : {}", BoardSql.INSERT);
         SqlParameterSource sqlParameterSource = new MapSqlParameterSource("boardId", dto.getBoardId())
                 .addValue("memberId", dto.getMemberId()).addValue("subject", dto.getSubject())
-                .addValue("content", dto.getContent()).addValue("regDate", dto.getReg_date())
+                .addValue("content", dto.getContent()).addValue("regDate", dto.getRegDate())
                 .addValue("readCount", dto.getReadCount());
         return namedParameterJdbcTemplate.update(BoardSql.INSERT, sqlParameterSource);
     }
