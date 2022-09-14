@@ -4,7 +4,7 @@ import com.example.board.domain.Member;
 import com.example.board.domain.MemberDTO;
 
 public interface MemberService {
-    public MemberDTO login(MemberDTO dto);
+    public Member login(Member member);
 
     void join(Member member);
 }

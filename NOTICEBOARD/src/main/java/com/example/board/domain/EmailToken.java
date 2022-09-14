@@ -22,12 +22,12 @@ public class EmailToken {
     @Id
     private String emailTokenId;
 
-    @Column(name = "expirationdate")
+//    @Column(name = "expirationdate")
     private LocalDateTime expirationDate;
 
     private boolean expired;
 
-    @Column(name = "memberid")
+//    @Column(name = "memberid")
     private String memberId;
 
     // 이메일 토큰 생성

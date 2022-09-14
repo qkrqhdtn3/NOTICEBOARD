@@ -41,20 +41,33 @@ public class MemberController {
 //        return "member/login";
     }
 
-    @ResponseBody
-    @RequestMapping(value = "/member/login", method = RequestMethod.POST)
-    public String regi(MemberDTO dto, HttpSession session) {
-        MemberDTO dto2 = service.login(dto);
-        if (dto != null) {
-            session.setAttribute("memberId", dto2.getMemberId());
-            session.setAttribute("memberName", dto2.getMemberName());
-            return "Y";
-        } else {
-            return "N";
-        }
-
+//    @ResponseBody
+//    @RequestMapping(value = "/member/login", method = RequestMethod.POST)
+//    public String regi(MemberDTO dto, HttpSession session) {
+//        MemberDTO dto2 = service.login(dto);
+//        if (dto != null) {
+//            session.setAttribute("memberId", dto2.getMemberId());
+//            session.setAttribute("memberName", dto2.getMemberName());
+//            return "Y";
+//        } else {
+//            return "N";
+//        }
+//
+//    }
+@ResponseBody
+@RequestMapping(value = "/member/login", method = RequestMethod.POST)
+public String regi(Member member, HttpSession session) {
+    Member member2 = memberService.login(member);
+    log.warn(Long.toString(member2.getMemberId()));
+    if (member2 != null) {
+        session.setAttribute("memberId", member2.getMemberId());
+        session.setAttribute("memberName", member2.getMemberName());
+        return "Y";
+    } else {
+        return "N";
     }
 
+}
     @GetMapping(value = "member/join")
     public String join() {
         return "thymeleaf/member/join";
@@ -80,7 +93,7 @@ public class MemberController {
 
         log.warn("memberId: " + member.getMemberName() + "\npassword: " + member.getPassword() + "\nnickname: " + member.getNickname() + "\nemail: " + request.getParameter("email"));
         memberService.join(member);
-        emailTokenService.createEmailToken(request.getParameter("memberId"), request.getParameter("email"));
+        emailTokenService.createEmailToken(request.getParameter("memberName"), request.getParameter("email"));
         return "thymeleaf/member/login";
     }
 

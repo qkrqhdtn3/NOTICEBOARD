@@ -19,15 +19,20 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private MemberRepository memberRepository;
 	
+//	@Override
+//	public MemberDTO login(MemberDTO dto) {
+//		log.warn("MemberServiceImpl.login()");
+//		return dao.login(dto).get(0);
+//	}
 	@Override
-	public MemberDTO login(MemberDTO dto) {
+	public Member login(Member member){
 		log.warn("MemberServiceImpl.login()");
-		return dao.login(dto).get(0);
+		return memberRepository.findByMemberNameAndPassword(member.getMemberName(), member.getPassword());
 	}
 
 	@Override
 	public void join(Member member) {
-		member.setMemberId();
+//		member.setMemberId();
 		memberRepository.save(member);
 	}
 

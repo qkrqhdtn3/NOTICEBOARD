@@ -3,28 +3,21 @@ package com.example.board.domain;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-//import javax.persistence.*;
-
+@Entity
 @Getter
 @Setter
-@Entity
-public class Member {
-
+public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long boardId;
     private long memberId;
-    private String memberName;
-    private String password;
-    private String nickname;
-    private boolean verified;
-
-    public void setVerified(){
-        verified = true;
-    }
+    private String subject;
+    private String content;
+    private String regDate;
+    private int readCount;
 }

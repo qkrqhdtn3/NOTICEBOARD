@@ -9,7 +9,7 @@ public class BoardSql {
 			""";
 
 	public static final String INSERT = """
-			INSERT INTO BOARD(boardId, subject, content, memberId, regDate, readcount) VALUES(:boardId, :subject, :content, :memberId, :regDate, 0)
+			INSERT INTO BOARD(board_id, subject, content, member_id, reg_date, read_count) VALUES(:boardId, :subject, :content, :memberId, :regDate, 0)
 			""";
 
 	public static final String UPDATE = """
