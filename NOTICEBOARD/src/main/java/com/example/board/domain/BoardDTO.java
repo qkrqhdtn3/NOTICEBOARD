@@ -16,12 +16,10 @@ import lombok.Setter;
 @Setter
 public class BoardDTO {
 	long boardId;
-	long memberId;
-	String memberName;
 	String subject;
 	String content;
 	String regDate;
 	int readCount;
-	
-	
+	long memberId;
+	String memberName;
 }

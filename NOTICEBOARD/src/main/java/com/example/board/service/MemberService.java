@@ -7,4 +7,6 @@ public interface MemberService {
     public Member login(Member member);
 
     void join(Member member);
+
+    long getMemberId(String memberName);
 }

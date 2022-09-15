@@ -28,10 +28,20 @@ public class EmailToken {
     private boolean expired;
 
 //    @Column(name = "memberid")
-    private String memberId;
-
+//    private String memberId;
+    private long memberId;
     // 이메일 토큰 생성
-    public static EmailToken createEmailToken(String memberId) {
+//    public static EmailToken createEmailToken(String memberId) {
+//        EmailToken emailToken = new EmailToken();
+////        5분 후 만료
+//        emailToken.expirationDate = LocalDateTime.now().plusMinutes(EMAIL_TOKEN_EXPIRATION_TIME_VALUE);
+//        emailToken.expired = false;
+//        emailToken.memberId = memberId;
+//
+//        return emailToken;
+//    }
+
+    public static EmailToken createEmailToken(long memberId) {
         EmailToken emailToken = new EmailToken();
 //        5분 후 만료
         emailToken.expirationDate = LocalDateTime.now().plusMinutes(EMAIL_TOKEN_EXPIRATION_TIME_VALUE);
@@ -40,8 +50,6 @@ public class EmailToken {
 
         return emailToken;
     }
-
-
     public void setTokenToUsed() {
         this.expired = true;
     }

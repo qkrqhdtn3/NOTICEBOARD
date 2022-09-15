@@ -14,8 +14,8 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class MemberServiceImpl implements MemberService {
 
-	@Autowired
-	private MemberDAO dao;
+//	@Autowired
+//	private MemberDAO dao;
 	@Autowired
 	private MemberRepository memberRepository;
 	
@@ -34,6 +34,11 @@ public class MemberServiceImpl implements MemberService {
 	public void join(Member member) {
 //		member.setMemberId();
 		memberRepository.save(member);
+	}
+
+	@Override
+	public long getMemberId(String memberName) {
+		return memberRepository.findByMemberName(memberName).getMemberId();
 	}
 
 }

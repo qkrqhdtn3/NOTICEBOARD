@@ -37,3 +37,4 @@ out/
 .vscode/
 
 noticeboard/src/main/resources/application.yml
+NOTICEBOARD/Logs/log.txt

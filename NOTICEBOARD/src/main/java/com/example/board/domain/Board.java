@@ -15,9 +15,10 @@ public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long boardId;
-    private long memberId;
     private String subject;
     private String content;
     private String regDate;
     private int readCount;
+    private long memberId;
+    private String memberName;
 }

@@ -91,9 +91,10 @@ public String regi(Member member, HttpSession session) {
 //        member.setPassword(request.getParameter("password"));
         member.setNickname(request.getParameter("nickname"));
 
-        log.warn("memberId: " + member.getMemberName() + "\npassword: " + member.getPassword() + "\nnickname: " + member.getNickname() + "\nemail: " + request.getParameter("email"));
+        log.warn("memberName: " + member.getMemberName() + "\npassword: " + member.getPassword() + "\nnickname: " + member.getNickname() + "\nemail: " + request.getParameter("email"));
         memberService.join(member);
-        emailTokenService.createEmailToken(request.getParameter("memberName"), request.getParameter("email"));
+        long memberId = memberService.getMemberId(member.getMemberName());
+        emailTokenService.createEmailToken(memberId, request.getParameter("email"));
         return "thymeleaf/member/login";
     }
 
