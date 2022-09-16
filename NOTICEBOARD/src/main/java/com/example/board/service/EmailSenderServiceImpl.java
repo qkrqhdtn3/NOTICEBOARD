@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class EmailSenderServiceImpl {
+public class EmailSenderServiceImpl implements EmailSenderService{
     private final JavaMailSender javaMailSender;
 
 //    @Async

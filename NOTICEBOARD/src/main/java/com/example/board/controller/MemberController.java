@@ -6,8 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import com.example.board.domain.EmailToken;
 import com.example.board.domain.Member;
-import com.example.board.service.EmailTokenServiceImpl;
-import com.example.board.service.MemberServiceImpl;
+import com.example.board.service.EmailTokenService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,13 +26,9 @@ import java.util.Random;
 @RequiredArgsConstructor
 @Controller
 public class MemberController {
-    //@Autowired
-//    private MemberService service;
-//@Autowired
-//    private EmailTokenServiceImpl emailTokenService;
-    private final MemberService service;
-    private final EmailTokenServiceImpl emailTokenService;
-    private final MemberServiceImpl memberService;
+
+    private final EmailTokenService emailTokenService;
+    private final MemberService memberService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String login() {

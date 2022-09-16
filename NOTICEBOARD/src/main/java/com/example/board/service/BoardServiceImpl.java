@@ -6,14 +6,12 @@ import java.util.List;
 
 import com.example.board.dao.BoardDAO;
 import com.example.board.dao.BoardRepository;
-import com.example.board.dao.MemberDAO;
 import com.example.board.dao.MemberRepository;
 import com.example.board.domain.Board;
 import com.example.board.domain.BoardDTO;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 //import lombok.extern.slf4j.Slf4j;
@@ -23,11 +21,10 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class BoardServiceImpl implements BoardService {
 
-    private final BoardDAO boardDao;
+//    private final BoardDAO boardDao;
     private final MemberRepository memberRepository;
     private final BoardRepository boardRepository;
     private final ModelMapper modelMapper;
-
     //	@Override
 //	public List<BoardDTO> list() throws Exception {
 //		List<BoardDTO> boardDTOList = boardDao.list();
@@ -93,43 +90,56 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public int regi(BoardDTO dto) throws Exception {
+    public boolean regi(BoardDTO dto) throws Exception {
 //		log.warn("boardDao.getMaxBoardId() = {}", boardDao.getMaxBoardId());
 
         Date date = new Date(System.currentTimeMillis());
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
         dto.setRegDate(format.format(date));
 
-//        if (boardDao.getMaxBoardId() == null) {
-//            dto.setBoardId(1);
+//        if (boardRepository.MaxByBoardId().isPresent()) {
+//            dto.setBoardId(boardRepository.MaxByBoardId().orElse(0) + 1);
 //        } else {
-//            dto.setBoardId(boardDao.getMaxBoardId() + 1);
+//            dto.setBoardId(1);
 //        }
-        if (boardDao.getMaxBoardId() == null) {
-            dto.setBoardId(1);
+        Board board = modelMapper.map(dto, Board.class);
+        if(boardRepository.save(board).getBoardId() == 0){
+            return false;
         } else {
-            dto.setBoardId(boardDao.getMaxBoardId() + 1);
+            return true;
         }
-
-        return boardDao.regi(dto);
     }
 
     @Override
     public BoardDTO view(int boardId) {
 //		log.warn("service.view()");
-        boardDao.updateReadCount(boardId);
-        return boardDao.view(boardId).get(0);
+        Board board = boardRepository.findByBoardId(boardId).orElse(null);
+        board.setReadCount(board.getReadCount() + 1);
+        boardRepository.save(board);
+//        boardDao.updateReadCount(boardId);
+        BoardDTO boardDTO = modelMapper.map(board, BoardDTO.class);
+        return boardDTO;
     }
 
     @Override
-    public int update(BoardDTO dto) {
+    public boolean update(BoardDTO dto) {
 //		log.warn("service.update()");
-        return boardDao.update(dto);
+        Board board = modelMapper.map(dto, Board.class);
+        if(boardRepository.save(board).getBoardId() == 0){
+            return false;
+        } else{
+            return true;
+        }
     }
 
     @Override
-    public int delete(int boardId) {
+    public boolean delete(long boardId) {
 //		log.warn("service.delete()");
-        return boardDao.delete(boardId);
+        if(boardRepository.deleteByBoardId(boardId) == 0){
+            return false;
+        } else{
+            return true;
+        }
+//        return boardDao.delete(boardId);
     }
 }

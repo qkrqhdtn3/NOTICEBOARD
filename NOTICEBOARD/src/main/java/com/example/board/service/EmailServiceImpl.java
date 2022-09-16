@@ -14,16 +14,16 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Service
 @Transactional
-public class EmailServiceImpl {
+public class EmailServiceImpl implements EmailService{
 
-    private final EmailTokenServiceImpl emailTokenService;
+    private final EmailTokenService emailTokenService;
     private final MemberRepository memberRepository;
     public boolean verifyEmail(String token){
         EmailToken findEmailToken = emailTokenService.findByIdAndExpirationDateAfterAndExpired(token);
 
 //        이메일 인증 성공
 //        Optional<MemberDTO> findMember = memberRepository.findById(findEmailToken.getMemberId());
-        Optional<Member> findMember = memberRepository.findById(findEmailToken.getMemberId());
+        Optional<Member> findMember = memberRepository.findByMemberId(findEmailToken.getMemberId());
         findEmailToken.setTokenToUsed();
 
         if(findMember.isPresent()){

@@ -15,8 +15,8 @@ import java.util.Optional;
 @Slf4j
 @RequiredArgsConstructor
 @Service
-public class EmailTokenServiceImpl {
-    private final EmailSenderServiceImpl emailSenderService;
+public class EmailTokenServiceImpl implements EmailTokenService{
+    private final EmailSenderService emailSenderService;
     private final EmailTokenRepository emailTokenRepository;
 
 //    public String createEmailToken(String memberName, String receiverEmail) {

@@ -9,11 +9,11 @@ public interface BoardService {
 //	public List<BoardDTO> list() throws Exception;
 	List<BoardDTO> list() throws Exception;
 
-	public int regi(BoardDTO dto) throws Exception;
+	boolean regi(BoardDTO dto) throws Exception;
 	
-	public BoardDTO view(int boardId);
+	BoardDTO view(int boardId);
 	
-	public int update(BoardDTO dto);
+	boolean update(BoardDTO dto);
 	
-	public int delete(int boardId);
+	boolean delete(long boardId);
 }

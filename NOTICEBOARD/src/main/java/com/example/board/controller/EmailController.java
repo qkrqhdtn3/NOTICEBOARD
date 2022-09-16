@@ -1,6 +1,6 @@
 package com.example.board.controller;
 
-import com.example.board.service.EmailServiceImpl;
+import com.example.board.service.EmailService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -18,7 +18,7 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping
 public class EmailController {
-    private final EmailServiceImpl emailService;
+    private final EmailService emailService;
 //    http://localhost:8081/confirm-email?token=3addc9cb-d14b-4f26-838e-a85de79584ca
     @GetMapping("/confirm-email")
     public String viewConfirmEmail(@Valid @RequestParam String token){

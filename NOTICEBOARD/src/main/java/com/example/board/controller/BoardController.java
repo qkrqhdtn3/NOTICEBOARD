@@ -8,6 +8,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import com.example.board.domain.Board;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,10 +27,11 @@ import com.example.board.service.BoardService;
 //@Slf4j
 @RequestMapping(value = "/board/*")
 @Controller
+@RequiredArgsConstructor
 public class BoardController {
 
-    @Autowired
-    private BoardService service;
+//    @Autowired
+    private final BoardService service;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String list(Model model) throws Exception {
@@ -51,7 +53,7 @@ public class BoardController {
 //        SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
 //
 //        dto.setReg_date(format.format(date));
-        if (service.regi(dto) == 1) {
+        if (service.regi(dto)) {
             return "Y";
         } else {
             return "N";
@@ -83,7 +85,7 @@ public class BoardController {
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public String update(BoardDTO dto) {
 //		log.warn("contorller.update()");
-        if (service.update(dto) == 1) {
+        if (service.update(dto) == true) {
             return "Y";
         } else {
             return "N";
@@ -94,7 +96,7 @@ public class BoardController {
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public String delete(HttpServletRequest request) {
 //		log.warn("controller.delete()");
-        if (service.delete(Integer.parseInt((String) request.getParameter("boardId"))) == 1) {
+        if (service.delete(Long.parseLong((String) request.getParameter("boardId"))) == true) {
             return "Y";
         } else {
             return "N";
