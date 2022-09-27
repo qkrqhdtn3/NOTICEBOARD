@@ -4,7 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import com.example.board.dao.BoardDAO;
 import com.example.board.dao.BoardRepository;
 import com.example.board.dao.MemberRepository;
 import com.example.board.domain.Board;
@@ -111,7 +110,7 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public BoardDTO view(int boardId) {
+    public BoardDTO view(long boardId) {
 //		log.warn("service.view()");
         Board board = boardRepository.findByBoardId(boardId).orElse(null);
         board.setReadCount(board.getReadCount() + 1);
@@ -125,6 +124,7 @@ public class BoardServiceImpl implements BoardService {
     public boolean update(BoardDTO dto) {
 //		log.warn("service.update()");
         Board board = modelMapper.map(dto, Board.class);
+        board.setRegDate(boardRepository.findByBoardId(board.getBoardId()).orElse(null).getRegDate());
         if(boardRepository.save(board).getBoardId() == 0){
             return false;
         } else{

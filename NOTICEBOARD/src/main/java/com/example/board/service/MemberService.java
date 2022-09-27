@@ -4,9 +4,9 @@ import com.example.board.domain.Member;
 import com.example.board.domain.MemberDTO;
 
 public interface MemberService {
-    public Member login(Member member);
+    MemberDTO login(MemberDTO member);
 
-    void join(Member member);
+    void join(MemberDTO member);
 
     long getMemberId(String memberName);
 }

@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import com.example.board.domain.EmailToken;
-import com.example.board.domain.Member;
 import com.example.board.service.EmailTokenService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -51,8 +50,8 @@ public class MemberController {
 //    }
 @ResponseBody
 @RequestMapping(value = "/member/login", method = RequestMethod.POST)
-public String regi(Member member, HttpSession session) {
-    Member member2 = memberService.login(member);
+public String regi(MemberDTO member, HttpSession session) {
+    MemberDTO member2 = memberService.login(member);
     log.warn(Long.toString(member2.getMemberId()));
     if (member2 != null) {
         session.setAttribute("memberId", member2.getMemberId());
@@ -79,7 +78,7 @@ public String regi(Member member, HttpSession session) {
 //        return "thymeleaf/member/login";
 //    }
     @RequestMapping(value = "member/joinBeforeVerified", method = RequestMethod.POST)
-    public String joinBeforeVerified(HttpServletRequest request, Member member) {
+    public String joinBeforeVerified(HttpServletRequest request, MemberDTO member) {
 //        log.warn("memberId: "+request.getParameter("memberId") + "\npassword: "+request.getParameter("password")+"\nnickname: "+request.getParameter("nickname")+"\nemail: "+request.getParameter("email"));
 
 //        member.setMemberId(request.getParameter("memberId"));

@@ -1,7 +1,9 @@
 package com.example.board.service;
 
 import com.example.board.dao.MemberRepository;
+import com.example.board.domain.BoardDTO;
 import com.example.board.domain.Member;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,9 @@ public class MemberServiceImpl implements MemberService {
 //	private MemberDAO dao;
 	@Autowired
 	private MemberRepository memberRepository;
+
+	@Autowired
+	private ModelMapper modelMapper;
 	
 //	@Override
 //	public MemberDTO login(MemberDTO dto) {
@@ -25,14 +30,17 @@ public class MemberServiceImpl implements MemberService {
 //		return dao.login(dto).get(0);
 //	}
 	@Override
-	public Member login(Member member){
+	public MemberDTO login(MemberDTO memberDTO){
 		log.warn("MemberServiceImpl.login()");
-		return memberRepository.findByMemberNameAndPassword(member.getMemberName(), member.getPassword());
+		Member member = memberRepository.findByMemberNameAndPassword(memberDTO.getMemberName(), memberDTO.getPassword());
+		MemberDTO memberDTO2 = modelMapper.map(member, MemberDTO.class);
+		return  memberDTO2;
 	}
 
 	@Override
-	public void join(Member member) {
+	public void join(MemberDTO memberDTO) {
 //		member.setMemberId();
+		Member member = modelMapper.map(memberDTO, Member.class);
 		memberRepository.save(member);
 	}
 

@@ -29,3 +29,4 @@
 -- UPDATE emailtoken SET member_id = (SELECT member_id FROM member WHERE emailtoken.member_id=member.member_name limit 1)
 
 -- alter table board rename column name to member_name;
+-- ALTER TABLE board modify board_id bigint not null auto_increment;
