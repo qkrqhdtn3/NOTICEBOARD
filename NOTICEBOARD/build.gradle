@@ -73,6 +73,9 @@ dependencies {
 
     // modelmapper
     implementation 'org.modelmapper:modelmapper:2.4.5'
+
+    //oauth2
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 }
 
 //gradle test -D
