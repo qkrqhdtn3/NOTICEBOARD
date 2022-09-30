@@ -12,13 +12,13 @@ import javax.persistence.*;
 @Builder
 @Getter
 @Entity
-public class User extends TimeEntity{
+public class User extends TimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false, length = 30, unique = true)
-    private String username;
+    private String memberName;
 
     @Column(nullable = false, unique = true)
     private String nickname;
@@ -29,22 +29,32 @@ public class User extends TimeEntity{
     @Column(nullable = false, length = 50)
     private String email;
 
+    @Column
+    private String picture;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
 
     // setter
-    public void modify(String nickname, String password){
+    public void modify(String nickname, String password) {
         this.nickname = nickname;
         this.password = password;
     }
 
-    public User updateModifiedDate(){
+    public User updateModifiedDate() {
         this.onPreUpdate();
         return this;
     }
 
-    public String getRoleValue(){
-        return this.role.getValue();
+    public User update(String memberName, String picture) {
+        this.memberName = memberName;
+        this.picture = picture;
+
+        return this;
+    }
+
+    public String getRoleKey() {
+        return this.role.getKey();
     }
 }

@@ -18,6 +18,9 @@
     <!--    <button type="button" onclick="fn_login();">로그인</button>-->
     <button type="button" th:onclick="fn_login()">로그인</button>
     <button type="button" onclick='location.href="/member/joinBeforeVerified"'>회원가입</button>
+    <div>
+        <button type="button" onclick='location.href="/oauth2/authorization/google"'>구글 로그인</button>
+    </div>
 </form>
 <!--<div th:replace="thymeleaf/fragments/footer :: footer(~{::body})"></div>-->
 <div th:replace="thymeleaf/fragments/footer :: footer"></div>

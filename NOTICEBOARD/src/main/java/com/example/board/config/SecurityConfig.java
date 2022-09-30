@@ -1,5 +1,6 @@
 package com.example.board.config;
 
+import com.example.board.service.CustomOAuth2UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,9 +17,10 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @RequiredArgsConstructor
 @Configuration
+@EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
-    private final CustomUserDetailsService myUserDetailsService;
+//    private final CustomUserDetailsService myUserDetailsService;
 
     private final AuthenticationFailureHandler customFailureHandler;
 
