@@ -1,5 +1,6 @@
 package com.example.board.config;
 
+import com.example.board.domain.Role;
 import com.example.board.service.CustomOAuth2UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -22,12 +23,12 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class SecurityConfig {
 //    private final CustomUserDetailsService myUserDetailsService;
 
-    private final AuthenticationFailureHandler customFailureHandler;
+//    private final AuthenticationFailureHandler customFailureHandler;
 
     private final CustomOAuth2UserService customOAuth2UserService;
 
     @Bean
-    public BCryptPasswordEncoder Encoder(){
+    public BCryptPasswordEncoder Encoder() {
         return new BCryptPasswordEncoder();
     }
 
@@ -37,24 +38,44 @@ public class SecurityConfig {
 //        return super.authenticationManagerBean();
 //    }
 
+//    @Bean
+//    public SecurityFilterChain configure(HttpSecurity http) throws Exception{
+//        http
+//                .csrf().ignoringAntMatchers("/api/**")
+//                .and()
+//                .authorizeRequests()
+//                .antMatchers("/", "/auth/**", "/posts/search/**").permitAll()
+//                .anyRequest().authenticated()
+//                .and()
+//                .formLogin()
+//                .loginPage("/auth/login")
+//                .loginProcessingUrl("/auth/loginProc")
+////                .failureHandler(customFailureHandler)
+//                .defaultSuccessUrl("/")
+//                .and()
+//                .logout()
+//                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+//                .invalidateHttpSession(true).deleteCookies("JSESSION")
+//                .logoutSuccessUrl("/")
+//                .and()
+//                .oauth2Login()
+//                .userInfoEndpoint()
+//                .userService(customOAuth2UserService);
+//        return http.build();
+//    }
+
     @Bean
-    public SecurityFilterChain configure(HttpSecurity http) throws Exception{
+    public SecurityFilterChain configure(HttpSecurity http) throws Exception {
         http
-                .csrf().ignoringAntMatchers("/api/**")
+                .csrf().disable()
+                .headers().frameOptions().disable()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/", "/auth/**", "/posts/search/**").permitAll()
+                .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**").permitAll()
+                .antMatchers("/api/v1/**").hasRole(Role.USER.name())
                 .anyRequest().authenticated()
                 .and()
-                .formLogin()
-                .loginPage("/auth/login")
-                .loginProcessingUrl("/auth/loginProc")
-                .failureHandler(customFailureHandler)
-                .defaultSuccessUrl("/")
-                .and()
                 .logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .invalidateHttpSession(true).deleteCookies("JSESSION")
                 .logoutSuccessUrl("/")
                 .and()
                 .oauth2Login()
@@ -64,7 +85,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    public WebSecurityCustomizer configure(){
+    public WebSecurityCustomizer configure() {
         return (web) -> web.ignoring().antMatchers("/images/**", "/js/**", "/webjars/**");
     }
 }
