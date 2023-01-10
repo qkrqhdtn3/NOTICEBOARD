@@ -33,14 +33,19 @@ public class BoardController {
 //    @Autowired
     private final BoardService service;
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String list(Model model) throws Exception {
-        List<BoardDTO> list = service.list();
-        model.addAttribute("list", list);
-
-        return "thymeleaf/board/list";
-    }
-
+//    @RequestMapping(value = "/list", method = RequestMethod.GET)
+//    public String list(Model model) throws Exception {
+//        List<BoardDTO> list = service.list();
+//        model.addAttribute("list", list);
+//
+//        return "thymeleaf/board/list";
+//    }
+@RequestMapping(value = "/list", method = RequestMethod.GET)
+public String list(Model model) throws Exception {
+    List<BoardDTO> list = service.list();
+    model.addAttribute("list", list);
+    return "thymeleaf/board/list";
+}
     @RequestMapping(value = "/regiView", method = RequestMethod.GET)
     public String regiView() throws Exception {
         return "thymeleaf/board/regi";
